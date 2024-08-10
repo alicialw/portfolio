@@ -13,8 +13,10 @@ body {
     background-color: black;
     font-family: "Space Grotesk", monospace, sans-serif;
     text-wrap: balance;
-    z-index:-1
+    z-index: -1
 }
+
+
 
 .overflow_y {
     overflow-y: auto;
@@ -31,6 +33,7 @@ body {
     padding: var(--rmg);
     z-index: 1;
 }
+
 .gradient_overlay {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
     margin: 0 calc(var(--rmg)*-1);
@@ -38,7 +41,7 @@ body {
     height: 25%;
     width: 100%;
     z-index: 3;
-    
+
 }
 
 #gradient_top {
@@ -75,7 +78,7 @@ body {
     height: 100%;
     overflow: hidden;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
     margin: calc(var(--rmg) * -1);
 }
@@ -84,6 +87,7 @@ video {
     object-fit: cover;
     object-position: center;
     overflow: clip;
+    width: 100%;
 }
 
 nav {
@@ -98,6 +102,7 @@ nav {
     mix-blend-mode: difference;
     z-index: 100
 }
+
 
 nav ul {
     display: flex;
@@ -151,7 +156,7 @@ nav li:hover a {
 
 .about {
     position: fixed;
-    bottom: var(--rmg);
+    bottom: 0;
     order: 3;
     transform-origin: top left;
     transform: translateY(100%) rotate(-90deg);
@@ -178,12 +183,12 @@ nav li:hover a {
 
 .works {
     position: fixed;
-    top: var(--rmg);
-    left: var(--rmg);
+    top: 0;
+    left: 0;
     order: 1;
     transform-origin: top right;
     transform: translateX(-100%) rotate(-90deg);
-    text-align: right;
+    text-align: left;
     z-index: 100;
 }
 
@@ -206,7 +211,7 @@ nav li:hover a {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    margin-left: 33%
+    margin-left: 33%;
 }
 
 #base,
@@ -288,6 +293,7 @@ nav li:hover a {
     width: calc((100% - var(--rmg)*5) / 4 * 3 + var(--rmg)*2);
     height: auto;
     margin: calc(var(--rmg)*-1) 0;
+    padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
     justify-content: flex-end;
@@ -311,8 +317,9 @@ nav li:hover a {
     grid-template-rows: auto auto auto auto;
     width: 100%;
     height: 100%;
-    padding: 33% 0 var(--rmg);
+    padding: 25% 0 var(--rmg);
     align-self: flex-end;
+    align-content: start;
 }
 
 .about_item,
@@ -325,6 +332,7 @@ nav li:hover a {
     line-height: 1.25;
     text-decoration: none;
     height: min-content;
+    overflow: hidden
 }
 
 .about_item ul {
@@ -347,6 +355,7 @@ nav li:hover a {
     grid-area: 4 / 3 / 4 / 3;
     align-self: end;
     margin-top: 1rem;
+    margin-bottom: var(--rmg);
 }
 
 #cd_profile {
@@ -399,6 +408,7 @@ nav li:hover a {
 
 #skl {
     grid-area: 4 / 2 / 5 / 2;
+    padding-bottom: var(--rmg);
 }
 
 .works_video {
@@ -416,6 +426,7 @@ nav li:hover a {
     padding-top: var(--rmg);
     transform-origin: center;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     /*transform-origin: center;
     transform: translateY(-50%) rotate(-90deg);*/
 }
@@ -425,16 +436,17 @@ nav li:hover a {
 }
 
 .works_list ul {
-    display: grid;
+    display: flex;
     position: absolute;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    flex-direction: column;
     gap: var(--rmg);
     list-style-type: none;
     margin: 0;
+    padding-left: 0;
     padding-bottom: calc(var(--rmg)*3);
     width: 100%;
     justify-content: end;
-    align-items: center;
+    align-items: flex-end;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -446,8 +458,8 @@ nav li:hover a {
     display: flex;
     aspect-ratio: 1 / 1;
     background: grey;
-    width: calc(var(--rmg)*16);
-    height: calc(var(--rmg)*16);
+    width: calc(var(--rmg)*12);
+    height: calc(var(--rmg)*12);
     border-radius: 1000px;
     float: left;
     flex: 0;
@@ -465,7 +477,6 @@ nav li:hover a {
     margin: 3rem;
     text-align: center;
 }
-
 
 
 @media only screen and (min-width: 0px) and (min-height: 0px) {
@@ -504,11 +515,15 @@ nav li:hover a {
     .select_svg {
         height: 4rem;
     }
-    
+
+    #hanoi {
+        font-size: calc(var(--rmg)/3*4);
     }
 
+}
 
-@media only screen and (min-width: 720px) and (min-height: 600px) {
+
+@media only screen and (min-width: 640px) and (min-height: 600px) {
     * {
         --rmg: 2rem;
     }
@@ -538,7 +553,9 @@ nav li:hover a {
         display: inline-block;
     }
 
-    
+    #hanoi {
+        font-size: calc(var(--rmg));
+    }
 }
 
 @media only screen and (min-width: 840px) and (min-height: 720px) {
@@ -546,9 +563,9 @@ nav li:hover a {
         --rmg: 3rem;
     }
 
-#cd_label {
-    padding: 2.25rem 2.25rem 2.25rem 3rem;
-}
+    #cd_label {
+        padding: 2.25rem 2.25rem 2.25rem 3rem;
+    }
 }
 
 
@@ -561,45 +578,71 @@ nav li:hover a {
 
 
 }
+
 @media only screen and (min-aspect-ratio: 4 / 5) {
-.works_list {
-    position: fixed;
-    width: 100%;
-    height: 100vw;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    list-style: none;
-    margin: calc(var(--rmg)*-1);
-    right:0;
-    padding-top: 25%;
-    transform-origin: center;
-    overflow-y: auto;
-    transform: rotate(-90deg) translateY(calc(var(--rmg)*-1)) ;
-}
-.works_list ul {
+    .works_list {
+        position: fixed;
+        width: 100%;
+        height: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        list-style: none;
+        margin: calc(var(--rmg)*-1);
+        right: 0;
+        padding-top: 25%;
+        transform-origin: center;
+        overflow-y: auto;
+        transform: rotate(-90deg) translateY(calc(var(--rmg)*-1));
+    }
+
+    .works_list ul {
         margin: 0;
-        padding: 0 calc((100vh - var(--rmg)*16)/2) calc(var(--rmg)*6);
+        padding: 0 calc((100vh - var(--rmg)*12)/2) calc(var(--rmg)*6);
         justify-content: end;
-        align-items: center;
+        align-items: flex-end;
         justify-self: center;
     }
-    
-.works_list li {
-    position: relative;
-    transform: rotate(90deg);
-    width: calc(var(--rmg)*16);
-    height: calc(var(--rmg)*16);
-    border-radius: 1000px;
-}
 
-#gradient_left, #gradient_right {
-    display: block;
-}
+    .works_list li {
+        position: relative;
+        transform: rotate(90deg);
+        width: calc(var(--rmg)*12);
+        height: calc(var(--rmg)*12);
+        border-radius: 1000px;
+    }
 
-#gradient_top, #gradient_bottom {
-    display: none;
-}
+    #gradient_left,
+    #gradient_right {
+        display: block;
+    }
+
+    #gradient_top,
+    #gradient_bottom {
+        display: none;
+    }
+
+    .load1 {
+        opacity: 0;
+        animation: fadeInLeft 1s forwards;
+    }
+
+    .load2 {
+        opacity: 0;
+        animation: fadeInRight 1s forwards;
+    }
+
+    .load3 {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+
+    .load4 {
+        opacity: 0;
+        animation: fadeInDown 1s forwards;
+    }
+
 
 }
 
@@ -613,26 +656,45 @@ nav li:hover a {
         flex-direction: row;
     }
 
+    .load1 {
+        opacity: 0;
+        animation: fadeInDown 1s forwards;
+    }
+
+    .load2 {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+
+    .load3 {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+
     .about {
         position: fixed;
-        top: var(--rmg);
-        right: var(--rmg);
+        top: 0;
+        right: 0;
         transform-origin: top left;
         transform: translateX(100%) rotate(90deg);
         text-align: left;
     }
 
     .alicia {
-        height: 4rem;
+        height: 3rem;
         position: fixed;
-        top: var(--rmg);
+        top: 0;
         transform: translate(-50%, 0) rotate(0);
         left: 50%;
     }
 
+    .select_svg {
+        height: 4rem;
+    }
+
     .works {
         position: fixed;
-        left: var(--rmg);
+        left: 0;
     }
 
     .cd_player {
@@ -682,6 +744,7 @@ nav li:hover a {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto auto auto;
         left: 0;
+        padding-top: 0;
         height: 100%;
     }
 
@@ -745,7 +808,7 @@ nav li:hover a {
         padding-top: var(--rmg);
         transform-origin: center;
         overflow-y: auto;
-        padding: calc((100vh - var(--rmg)*4) / 3 + var(--rmg)) 0;
+        padding: 33% 0;
         /*transform-origin: center;
         transform: translateY(-50%) rotate(-90deg);*/
     }
@@ -758,7 +821,6 @@ nav li:hover a {
         width: calc(100vw - var(--rmg)*2);
         height: calc(100vw - var(--rmg)*2);
         border-radius: 52.5rem;
-        ;
         float: left;
         flex: 0;
     }
@@ -775,12 +837,13 @@ nav li:hover a {
     }
 
 
-    .about_video {
+    .about_video,
+    .works_video {
         display: none;
     }
 
     .about_container {
-    padding-top: 25%;
+        padding-top: 50%;
     }
 
     .about_grid {
@@ -790,8 +853,8 @@ nav li:hover a {
         width: auto;
         height: 100%;
         left: 0;
-        padding-bottom: var(--rmg)*3;
     }
+
     #cd_label {
         right: var(--rmg);
         border-radius: 0.75rem 0rem 0rem 0.75rem;
@@ -799,5 +862,57 @@ nav li:hover a {
         height: calc((100vw - var(--rmg)*2)/5);
         padding: 0.75rem;
     }
-    
+
+}
+
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
