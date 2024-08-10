@@ -31,7 +31,7 @@ body {
     padding: var(--rmg);
     z-index: 1;
 }
-.gradient-overlay {
+.gradient_overlay {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
     margin: 0 calc(var(--rmg)*-1);
     position: absolute;
@@ -41,13 +41,31 @@ body {
     
 }
 
-#gradient-top {
+#gradient_top {
     top: 0;
 }
 
-#gradient-bottom {
+#gradient_bottom {
     bottom: 0;
     transform: rotate(180deg);
+}
+
+#gradient_left {
+    margin: calc(var(--rmg)*-1) 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    display: none;
+}
+
+#gradient_right {
+    margin: calc(var(--rmg)*-1) 0;
+    right: 0;
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    display: none;
 }
 
 .background-video {
@@ -568,13 +586,18 @@ nav li:hover a {
         justify-self: center;
     }
     
-    .works_list li {
-        position: relative;
-        transform: rotate(90deg);
-        width: calc(var(--rmg)*17.5);
-        height: calc(var(--rmg)*17.5);
-        border-radius: 1000px;
-    }
+.works_list li {
+    position: relative;
+    transform: rotate(90deg);
+    width: calc(var(--rmg)*17.5);
+    height: calc(var(--rmg)*17.5);
+    border-radius: 1000px;
+}
+
+#gradient_left, #gradient_right {
+    display: block;
+}
+
 }
 
 @media only screen and (max-aspect-ratio: 4 / 5) {
