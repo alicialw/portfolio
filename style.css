@@ -483,12 +483,24 @@ nav li:hover a {
         font-weight: 400;
         line-height: 1.5rem;
     }
+
+    .shorter_location {
+        display: none;
+    }
+
+    .longer_location {
+        display: inline-block;
+    }
 }
 
 @media only screen and (min-width: 840px) and (min-height: 720px) {
     * {
         --rmg: 3rem;
     }
+
+#cd_label {
+    padding: 2.25rem 2.25rem 2.25rem 3rem;
+}
 }
 
 
