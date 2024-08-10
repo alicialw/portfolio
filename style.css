@@ -284,7 +284,6 @@ nav li:hover a {
     align-items: stretch;
     margin: calc(var(--rmg) * -1);
     width: calc((100% - var(--rmg)*5) / 4 + var(--rmg)*2);
-    min-height: 100%;
     overflow: hidden;
 }
 
