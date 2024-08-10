@@ -13,5 +13,5 @@ window.addEventListener("loading", function() {
         element.style.opacity = 1;
     });
 
-    document.body.style.display = "block"; // Display the body after all elements are loaded
+    document.body.style.display = "block"; 
 });
