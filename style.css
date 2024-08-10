@@ -71,7 +71,7 @@ body {
     display: none;
 }
 
-.background-video {
+.background_video {
     position: fixed;
     display: flex;
     width: 100%;
