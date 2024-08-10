@@ -431,7 +431,7 @@ nav li:hover a {
     gap: var(--rmg);
     list-style-type: none;
     margin: 0;
-    padding-bottom: calc(var(--rmg)*6);
+    padding-bottom: calc(var(--rmg)*3);
     width: 100%;
     justify-content: end;
     align-items: center;
@@ -446,8 +446,8 @@ nav li:hover a {
     display: flex;
     aspect-ratio: 1 / 1;
     background: grey;
-    width: calc(var(--rmg)*17.5);
-    height: calc(var(--rmg)*17.5);
+    width: calc(var(--rmg)*16);
+    height: calc(var(--rmg)*16);
     border-radius: 1000px;
     float: left;
     flex: 0;
@@ -579,7 +579,7 @@ nav li:hover a {
 }
 .works_list ul {
         margin: 0;
-        padding: 0 calc((100vh - var(--rmg)*17.5)/2) calc(var(--rmg)*6);
+        padding: 0 calc((100vh - var(--rmg)*16)/2) calc(var(--rmg)*6);
         justify-content: end;
         align-items: center;
         justify-self: center;
@@ -588,8 +588,8 @@ nav li:hover a {
 .works_list li {
     position: relative;
     transform: rotate(90deg);
-    width: calc(var(--rmg)*17.5);
-    height: calc(var(--rmg)*17.5);
+    width: calc(var(--rmg)*16);
+    height: calc(var(--rmg)*16);
     border-radius: 1000px;
 }
 
