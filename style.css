@@ -598,6 +598,10 @@ nav li:hover a {
     display: block;
 }
 
+#gradient_top, #gradient_bottom {
+    display: none;
+}
+
 }
 
 @media only screen and (max-aspect-ratio: 4 / 5) {
