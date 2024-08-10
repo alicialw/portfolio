@@ -383,6 +383,10 @@ nav li:hover a {
     grid-area: 4 / 2 / 5 / 2;
 }
 
+.works_video {
+    opacity: 0.5;
+}
+
 .works_list {
     position: relative;
     width: 75%;
@@ -572,7 +576,7 @@ nav li:hover a {
         border-radius: 1000px;
     }
 }
-}
+
 @media only screen and (max-aspect-ratio: 4 / 5) {
 
     #main {
