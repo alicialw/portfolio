@@ -427,6 +427,13 @@ nav li:hover a {
         --rmg: 1rem;
     }
 
+    #cd_label {
+        border-radius: 0.75rem 0rem 0rem 0.75rem;
+        width: calc((100vh - var(--rmg)*2)/5*2);
+        height: calc((100vh - var(--rmg)*2)/5);
+        padding: 0.75rem;
+    }
+
     #cd_label>span {
         color: #FFF;
         font-family: "Space Grotesk", monospace, sans-serif;
@@ -444,6 +451,13 @@ nav li:hover a {
         display: none;
     }
 
+    .alicia {
+        height: 2rem;
+    }
+
+    .select_svg {
+        height: 4rem;
+    }
     
     }
 
@@ -451,6 +465,14 @@ nav li:hover a {
 @media only screen and (min-width: 720px) and (min-height: 600px) {
     * {
         --rmg: 2rem;
+    }
+
+    .alicia {
+        height: 4rem;
+    }
+
+    .select_svg {
+        height: 8rem;
     }
 
     #cd_label>span {
@@ -538,6 +560,7 @@ nav li:hover a {
     }
 
     #cd_label {
+        right: var(--rmg);
         border-radius: 1.5rem 0rem 0rem 1.5rem;
         width: calc((100vw - var(--rmg)*2)/5*2);
         height: calc((100vw - var(--rmg)*2)/5);
@@ -653,14 +676,6 @@ nav li:hover a {
         overflow-y: auto
     }
 
-    .alicia {
-        height: 2rem;
-    }
-
-    .select_svg {
-        height: 4rem;
-        padding-top: calc((100% - var(--rmg)*6) / 5 + var(--rmg));
-    }
 
     .about_video {
         display: none;
@@ -679,11 +694,12 @@ nav li:hover a {
         left: 0;
         padding-bottom: var(--rmg)*3;
     }
-
     #cd_label {
+        right: var(--rmg);
         border-radius: 0.75rem 0rem 0rem 0.75rem;
         width: calc((100vw - var(--rmg)*2)/5*2);
         height: calc((100vw - var(--rmg)*2)/5);
         padding: 0.75rem;
     }
+    
 }
