@@ -556,7 +556,7 @@ nav li:hover a {
 
     .about_grid {
         position: relative;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto auto auto;
         left: 0;
         height: 100%;
@@ -667,7 +667,7 @@ nav li:hover a {
     }
 
     .about_container {
-    top: calc((100% - var(--rmg)*6) / 5 + var(--rmg));
+    padding-top: 25%;
     }
 
     .about_grid {
@@ -675,9 +675,9 @@ nav li:hover a {
         grid-template-columns: auto auto;
         grid-template-rows: auto auto auto auto auto;
         width: auto;
-        height: auto;
+        height: 100%;
         left: 0;
-        padding-bottom: var(--rmg);
+        padding-bottom: var(--rmg)*3;
     }
 
     #cd_label {
