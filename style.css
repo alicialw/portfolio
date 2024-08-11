@@ -12,7 +12,7 @@ body {
     width: 100%;
     background-color: black;
     font-family: "Space Grotesk", monospace, sans-serif;
-    text-wrap: balance;
+    text-wrap: pretty;
     z-index: -1
 }
 
@@ -83,7 +83,7 @@ body {
     margin: calc(var(--rmg) * -1);
 }
 
-video {
+.background_ video video {
     object-fit: cover;
     object-position: center;
     overflow: clip;
@@ -330,7 +330,8 @@ nav li:hover a {
     line-height: 1.25;
     text-decoration: none;
     height: min-content;
-    overflow: hidden
+    hyphens: auto;
+    overflow: hidden;
 }
 
 .about_item ul {
@@ -455,7 +456,6 @@ nav li:hover a {
     position: relative;
     display: flex;
     aspect-ratio: 1 / 1;
-    background: grey;
     width: calc(var(--rmg)*12);
     height: calc(var(--rmg)*12);
     border-radius: 1000px;
@@ -468,18 +468,68 @@ nav li:hover a {
 }
 
 .works_list a {
+    position: relative;
+    display: flex;
+    border-radius: 1000px;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.works_list video, .works_list img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: clip;
+    border-radius: 1000px;
+    z-index: 0;
+    mix-blend-mode: normal;
+    filter: invert(1) grayscale(1);
 }
 
 .works_list p {
     color: #FFF;
     font-family: "Space Grotesk", monospace, sans-serif;
-    font-size: calc(var(--rmg) / 3* 4);
+    font-size: calc(var(--rmg));
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin: 3rem;
+    margin: 2rem;
+    white-space: wrap;
+    text-wrap: balance;
     text-align: center;
+    z-index: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.works_list a:hover{
+    opacity: 1;
+    transition: 0.5s;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#g23, #odd, #fwr {
+    filter: invert(0) grayscale(1);
+}
+
+@media (hover: none) and (pointer: none) {
+
+    .works_list video {
+        filter: none;
+    }
 }
 
 
@@ -521,7 +571,7 @@ nav li:hover a {
     }
 
     #hanoi {
-        font-size: calc(var(--rmg)/3*4);
+        font-size: calc(var(--rmg));
     }
 
 }
@@ -558,7 +608,7 @@ nav li:hover a {
     }
 
     #hanoi {
-        font-size: calc(var(--rmg));
+        font-size: calc(var(--rmg)/3*2);
     }
 }
 
@@ -578,6 +628,7 @@ nav li:hover a {
     #cd_label {
         position: fixed;
         right: 0;
+        padding: 2rem;
     }
 
 
@@ -829,6 +880,9 @@ nav li:hover a {
         flex: 0;
     }
 
+    .works_list a {
+        opacity: 1;
+    }
 }
 
 

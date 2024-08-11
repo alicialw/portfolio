@@ -16,3 +16,21 @@ window.addEventListener("loading", function() {
     document.body.style.display = "block"; 
 });
 
+const wlinks = document.querySelectorAll('.works_list a');
+const wvideos = document.querySelectorAll('.works_list video, .works_list img');
+const defaultFilters = [];
+
+wvideos.forEach(wvideo => {
+    defaultFilters.push(wvideo.style.filter);
+});
+
+
+wlinks.forEach((wlinks, index) => {
+    wlinks.addEventListener('mouseover', () => {
+        wvideos[index].style.filter = 'none';
+    });
+
+    wlinks.addEventListener('mouseout', () => {
+        wvideos[index].style.filter = defaultFilters[index];
+    });
+});
