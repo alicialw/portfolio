@@ -121,7 +121,6 @@ nav li {
     flex: 0;
     opacity: 0.5;
     z-index: 100;
-    transition: transform 0.5s;
 }
 
 nav li a {
@@ -464,6 +463,12 @@ nav li:hover a {
     flex: 0;
     align-items: center;
     justify-content: center;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.works_list a {
+    text-decoration: none;
 }
 
 .works_list p {
@@ -676,7 +681,6 @@ nav li:hover a {
         transform-origin: top left;
         transform: translateX(100%) rotate(90deg);
         text-align: left;
-        transition: transform 1s;
     }
 
     .alicia {
@@ -694,7 +698,6 @@ nav li:hover a {
     .works {
         position: fixed;
         left: 0;
-        transition: transform 1s;
     }
 
     .cd_player {
