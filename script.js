@@ -34,3 +34,4 @@ wlinks.forEach((wlinks, index) => {
         wvideos[index].style.filter = defaultFilters[index];
     });
 });
+
