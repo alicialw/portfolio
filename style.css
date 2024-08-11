@@ -18,7 +18,9 @@ body {
     z-index: -1
 }
 
-
+span.line {
+    display: inline-block;
+  }
 
 .overflow_y {
     overflow-y: auto;
@@ -332,7 +334,6 @@ nav li:hover a {
     line-height: 1.25;
     text-decoration: none;
     height: min-content;
-    hyphens: auto;
     overflow: hidden;
 }
 
@@ -373,6 +374,7 @@ nav li:hover a {
 }
 
 #designer_desc {
+    hyphens: auto;
     grid-area: 1 / 2 / 1 / 2;
 }
 
@@ -462,7 +464,6 @@ nav li:hover a {
     height: calc(var(--rmg)*12);
     border-radius: 1000px;
     margin-bottom: var(--rmg);
-    float: right;
     align-items: center;
     justify-content: center;
     pointer-events: auto;
@@ -609,6 +610,7 @@ nav li:hover a {
 
     .longer_location {
         display: inline-block;
+        hyphens: auto;
     }
 
     #hanoi {
@@ -656,9 +658,10 @@ nav li:hover a {
     }
 
     .works_list ul {
-        width:calc(var(--rmg)*12);
         padding: calc(100vh - (var(--rmg)*12)) 0;
-        /*padding: 0 calc((100vh - var(--rmg)*12)/2) calc(var(--rmg)*6);
+        /*
+        width:calc(var(--rmg)*12);
+        padding: 0 calc((100vh - var(--rmg)*12)/2) calc(var(--rmg)*6);
         justify-content: end;
         align-items: flex-end;
         justify-self: center;*/
@@ -666,6 +669,7 @@ nav li:hover a {
     }
 
     .works_list li {
+        margin-left: auto;
         position: relative;
         /*transform: rotate(90deg);*/
         width: calc(var(--rmg)*12);
