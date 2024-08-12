@@ -16,7 +16,7 @@ body {
     background-color: black;
     font-family: "Space Grotesk", monospace, sans-serif;
     text-wrap: pretty;
-    z-index: -1
+    z-index: -1;
 }
 
 span.line {
@@ -87,6 +87,7 @@ span.line {
     justify-content: space-between;
     align-items: stretch;
     margin: calc(var(--rmg) * -1);
+
 }
 
 .background_ video video {
@@ -340,6 +341,7 @@ nav li:hover a {
     height: min-content;
     overflow: visible;
     hyphens: auto;
+    mix-blend-mode: difference;
 }
 
 .about_item ul {
@@ -393,6 +395,7 @@ nav li:hover a {
     justify-content: flex-start;
     list-style: none;
     transform-origin: center;
+    overflow-x: none;
     overflow-y: auto;
     /*transform-origin: center;
     transform: translateY(-50%) rotate(-90deg);*/
