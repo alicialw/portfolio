@@ -416,6 +416,7 @@ nav li:hover a {
     height: 100%;
     justify-content: end;
     align-items: flex-end;
+    overflow-x: visible;
     overflow-y: auto;
     white-space: nowrap;
     -ms-overflow-style: none;
@@ -429,6 +430,7 @@ nav li:hover a {
 .works_list li {
     position: relative;
     display: flex;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 12%, rgba(255, 255, 255, 0.50) 12%, rgba(255, 255, 255, 0.50) 33.75%, #FFF 34%);
     aspect-ratio: 1 / 1;
     width: calc(var(--rmg)*12);
     height: calc(var(--rmg)*12);
@@ -444,6 +446,8 @@ nav li:hover a {
     /*scroll-snap-align: center;
     scroll-snap-stop: always;*/
     transition: 0.5s;
+
+    
 }
 
 .works_list a {
@@ -474,6 +478,14 @@ nav li:hover a {
     z-index: 0;
     mix-blend-mode: normal;
     filter: invert(1) grayscale(1);
+    -webkit-mask-image: url(assets/images/works/CD_mask.png);
+    mask-image: url(assets/images/works/CDouter_mask.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
 }
 
 .works_list p {
@@ -526,9 +538,9 @@ nav li:hover a {
 }
 
 .works_list li:hover {
-    z-index: 100;
     transform: translateX(-50%) rotateX(-60deg) rotateY(0deg) rotateZ(0deg);
     transition: 0.5s;
+    z-index: 100;
 }
 
 #g23, #odd, #fwr {
@@ -1053,6 +1065,8 @@ nav li:hover a {
         height: auto;
     }
 
+
+
     #cd_label {
         right: var(--rmg);
         border-radius: 1.5rem 0rem 0rem 1.5rem;
@@ -1101,8 +1115,11 @@ nav li:hover a {
     .works_list a {
         opacity: 1;
     }
-}
 
+    .works_list p {
+        font-size: calc(var(--rmg)/3*4);
+}
+}
 
 @media only screen and (max-aspect-ratio: 3 / 5) {
 
