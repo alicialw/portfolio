@@ -6,6 +6,7 @@
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +47,7 @@ span.line {
     width: 100%;
     z-index: 3;
     overflow: hidden;
+    pointer-events: none;
 }
 
 #gradient_top {
@@ -417,8 +419,9 @@ nav li:hover a {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
 }
+
 
 .works_list li {
     position: relative;
@@ -426,14 +429,18 @@ nav li:hover a {
     aspect-ratio: 1 / 1;
     width: calc(var(--rmg)*12);
     height: calc(var(--rmg)*12);
-    border-radius: 1000px;
-    margin-bottom: var(--rmg);
+    /*border-radius: 1000px;*/
+    margin: calc(var(--rmg)*-8) 0;
     align-items: center;
     justify-content: center;
     pointer-events: auto;
     cursor: pointer;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateX(-60deg) rotateY(0deg) rotateZ(45deg);
+    /*scroll-snap-align: center;
+    scroll-snap-stop: always;*/
+    transition: 0.5s;
 }
 
 .works_list a {
@@ -490,9 +497,42 @@ nav li:hover a {
     transition: 0.5s;
 }
 
+
+#work1 {
+    z-index: 6;
+}
+
+#work2 {
+    z-index: 5;
+}
+
+#work3 {
+    z-index: 4;
+}
+
+#work4 {
+    z-index: 3;
+}
+
+#work5 {
+    z-index: 2;
+}
+
+#work6 {
+    z-index: 1;
+}
+
+.works_list li:hover {
+    z-index: 100;
+    transform: translateX(-50%) rotateX(-60deg) rotateY(0deg) rotateZ(0deg);
+    transition: 0.5s;
+}
+
 #g23, #odd, #fwr {
     filter: invert(0) grayscale(1);
 }
+
+
 
 @media (hover: none) and (pointer: none) {
 
