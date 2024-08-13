@@ -33,7 +33,7 @@ window.addEventListener("loading", function() {
         element.style.opacity = 1;
     });
 
-    document.body.style.display = "block"; 
+    document.body.style.display = "flex"; 
 });
 
 const wlinks = document.querySelectorAll('.works_list a');
@@ -55,3 +55,24 @@ wlinks.forEach((wlinks, index) => {
     });
 });
 
+const toggleButton = document.getElementById('toggleAbout');
+const aboutLyrics = document.querySelector('.about_lyrics');
+const aboutContainer = document.querySelector('.about_container');
+
+aboutLyrics.style.opacity = 1;
+aboutContainer.style.display = 'none';
+toggleButton.textContent = 'A';
+
+toggleButton.addEventListener('click', () => {
+    if (aboutLyrics.style.opacity == 0) {
+        aboutLyrics.style.opacity = 1;
+        aboutLyrics.style.zIndex = 5;
+        aboutContainer.style.display = 'none';
+        toggleAbout.textContent = 'A';
+    } else {
+        aboutLyrics.style.opacity = 0;
+        aboutLyrics.style.zIndex = -1;
+        aboutContainer.style.display = 'flex';
+        toggleAbout.textContent = '⏵';
+    }
+});
