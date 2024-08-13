@@ -1,3 +1,23 @@
+var loaderVar;
+
+function loaderFunction() {
+    loaderVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+    var loader = document.getElementById("loader");
+    var main = document.getElementById("main");
+
+    loader.style.opacity = "0";
+    main.style.display = "flex";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500); // Fade out duration
+}
+
+loaderFunction(); 
+
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll(".load1 .load2");
     elements.forEach(element => {
