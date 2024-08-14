@@ -1,5 +1,6 @@
 :root {
     --rmg: 3rem;
+    --lyrics: 2.5rem;
 }
 
 
@@ -344,6 +345,7 @@ nav li:hover a {
     position: absolute;
     align-items: center;
     justify-content: flex-start;
+    overflow-x:hidden;
     overflow-y: scroll;
     background: black;
     z-index: 5;
@@ -367,14 +369,14 @@ nav li:hover a {
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
-    overflow: visible;
+    text-wrap: balance;
     hyphens: none;
     text-align: center;
     mix-blend-mode: difference;
-    animation: lyrics ease-in-out;
+    /*animation: lyrics ease-in-out;
     animation-timeline: view();
-    animation-range: entry cover;
-    --lyrics: 2.5rem;
+    animation-range: entry cover;*/
+    transition: all linear;
 }
 
 .about_lyrics .lyrics_section {
@@ -392,7 +394,7 @@ nav li:hover a {
     50% {
         opacity: 1;
         font-size: var(--lyrics);
-        margin: calc(var(--lyrics)/5*3);
+        margin: calc(var(--lyrics)/5*2);
     }
 
     100% {
@@ -1245,9 +1247,10 @@ nav li:hover a {
 
 
     .about_lyrics {
+        top: 0;
         height: 100%;
         width: 100%;
-        padding: 50% var(--rmg) 100%;
+        padding: 75% var(--rmg) 120%;
     }
 
     .about_lyrics p, .about_lyrics a, .about_lyrics li {
@@ -1256,6 +1259,7 @@ nav li:hover a {
     }
 
     #profile_lyrics {
+        top: 33%;
         width: 75%;
     }
 
