@@ -590,7 +590,7 @@ nav li:hover a {
 .works_list li {
     position: relative;
     display: block;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 12%, rgba(255, 255, 255, 0.50) 12%, rgba(255, 255, 255, 0.50) 33.75%, #FFF 34%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 12%, rgba(255, 255, 255, 0.25) 12%, rgba(255, 255, 255, 0.50) 33.75%, #FFF 34%, rgba(255, 255, 255, 0.00) 50%);
     aspect-ratio: 1 / 1;
     width: calc(var(--rmg)*12);
     height: calc(var(--rmg)*12);
@@ -603,7 +603,7 @@ nav li:hover a {
     transform-origin: center;
     transform-style: preserve-3d;
     transform: rotateX(-60deg) rotateY(0deg) rotateZ(45deg);
-    scroll-snap-align: center;
+    /*scroll-snap-align: center;*/
     /*scroll-snap-stop: always;*/
     transition: 0.5s;
 
@@ -700,13 +700,18 @@ nav li:hover a {
     z-index: 1;
 }
 
-.works_list li:hover {
-    transform: translateX(-50%) translateY(0) rotateX(-60deg) rotateY(0deg) rotateZ(0deg);
-    /*margin-top: calc(var(--rmg)*12);
-    margin-bottom: calc(var(--rmg)*-8);*/
+.works_list li.focus:hover {
+    transform: translateX(-50%) rotateX(0) rotateY(0deg) rotateZ(0deg) !important;
+    z-index: 100 !important;
     transition: 0.5s;
-    z-index: 100;
 }
+
+.works_focusH {
+display: none;
+}
+
+/*margin-top: calc(var(--rmg)*12);
+    margin-bottom: calc(var(--rmg)*-8);*/
 
 #g23, #odd, #fwr {
     filter: invert(0) grayscale(1);
@@ -1093,7 +1098,9 @@ nav li:hover a {
 
 @media only screen and (min-aspect-ratio: 4 / 5) {
 
-
+    .works_focusH {
+        display: flex;
+    }
     
     .works_list {
         width: 100%;
