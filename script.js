@@ -64,6 +64,7 @@ worksList.addEventListener('scroll', function() {
         if (window.matchMedia('(min-aspect-ratio: 4/5)').matches) {
             if (itemTop < worksListMiddle && itemTop + itemHeight > worksListMiddle) {
                 if (index !== topItemIndex) {
+                    worksListItems[topItemIndex].classList.remove('focus');
                     worksListItems[topItemIndex].style.transform = 'rotateX(-60deg) rotateY(0deg) rotateZ(45deg)';
                     topItemIndex = index;
                     item.style.transform = 'translateX(-50%) translateY(0) rotateX(-60deg) rotateY(0deg) rotateZ(0deg)';
