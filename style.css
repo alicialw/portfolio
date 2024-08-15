@@ -42,7 +42,7 @@ body {
   }
 
 #light_mode {
-    display: none;
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -53,16 +53,18 @@ body {
     z-index: 98;
     overflow: hidden;
     pointer-events: none;
+    opacity: 0;
 }
 
 
 #rainbow_mode {
-    display: none;
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left:0;
+    opacity: 0;
     background: #5200B9;
     mix-blend-mode: difference;
     z-index: 98;
@@ -207,7 +209,7 @@ nav {
     padding: 0;
     transform-origin: center;
     mix-blend-mode: difference;
-    z-index: 100
+    z-index: 100;
 }
 
 
@@ -225,7 +227,7 @@ nav ul {
 nav li {
     float: left;
     flex: 0;
-    opacity: 0.5;
+    filter:brightness(0.5);
     z-index: 100;
 }
 
@@ -247,7 +249,7 @@ nav li a {
 nav li:hover,
 .about_container a:hover,
 .about_lyrics a:hover {
-    opacity: 1;
+    filter:brightness(1);
     filter: blur(4px);
     pointer-events: auto;
     cursor: pointer;
@@ -297,13 +299,13 @@ nav li:hover a {
 }
 
 .select {
-    opacity: 1;
+    filter:brightness(1);
     transform: translateX(0%) translateY(0%) rotate(0deg);
 }
 
 .select_svg {
     height: 8rem;
-    opacity: 1;
+    filter:brightness(1);
     transform: rotate(0deg) translateY(-50%);
 }
 
@@ -492,7 +494,7 @@ button {
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
-    opacity: 0.5;
+    filter: brightness(0.5);
 }
 
 .toggleGroup {
@@ -504,6 +506,7 @@ button {
     padding: 0;
     margin: 0;
     z-index: 100;
+    mix-blend-mode: difference;
 }
 
 .toggleIndex {
@@ -515,7 +518,6 @@ button {
     right: calc((100vh - var(--rmg))/2);
     height: 48px;
     width: 48px;
-    z-index: 100;
     
 }
 
@@ -529,7 +531,7 @@ button {
     }
 
 button:hover{
-    opacity: 1;
+    filter: brightness(1);
 }
 
 button:active{

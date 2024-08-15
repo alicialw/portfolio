@@ -53,24 +53,24 @@ toggleTheme.addEventListener('click', function() {
         if (!isFilterApplied) {
             body.style.filter = 'invert(0.84)';
             worksFrame.style.filter = 'invert(1) contrast(1.5)';
-            lightMode.style.display = 'block';
-            rainbowMode.style.display = 'none';
+            lightMode.style.opacity = '1';
+            rainbowMode.style.opacity = '0';
             gradientOverlays.forEach(overlay => {
                 overlay.style.filter = 'none';
             });
             isFilterApplied = true;
         } else {
-            if (lightMode.style.display === 'block') {
+            if (lightMode.style.opacity === '1') {
                 body.style.filter = 'invert(0)';
                 worksFrame.style.filter = 'invert(0) contrast(1)';
-                lightMode.style.display = 'none';
-                rainbowMode.style.display = 'block';
+                lightMode.style.opacity = '0';
+                rainbowMode.style.opacity = '1';
                 gradientOverlays.forEach(overlay => {
                     overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
                 });
             } else {
-                lightMode.style.display = 'none';
-                rainbowMode.style.display = 'none';
+                lightMode.style.opacity = '0';
+                rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
                     overlay.style.filter = 'none';
                 });
@@ -80,23 +80,23 @@ toggleTheme.addEventListener('click', function() {
     } else {
         if (!isFilterApplied) {
             body.style.filter = 'invert(0.84)';
-            lightMode.style.display = 'block';
-            rainbowMode.style.display = 'none';
+            lightMode.style.opacity = '1';
+            rainbowMode.style.opacity = '0';
             gradientOverlays.forEach(overlay => {
                 overlay.style.filter = 'none';
             });
             isFilterApplied = true;
         } else {
-            if (lightMode.style.display === 'block') {
+            if (lightMode.style.opacity === '1') {
                 body.style.filter = 'invert(0)';
-                lightMode.style.display = 'none';
-                rainbowMode.style.display = 'block';
+                lightMode.style.opacity = '0';
+                rainbowMode.style.opacity = '1';
                 gradientOverlays.forEach(overlay => {
                     overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
                 });
             } else {
-                lightMode.style.display = 'none';
-                rainbowMode.style.display = 'none';
+                lightMode.style.opacity = '0';
+                rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
                     overlay.style.filter = 'none';
                 });
