@@ -541,11 +541,12 @@ button:active{
 }
 
 #theme_palette {
+    aspect-ratio: 1 / 1;
     border-radius: 100%;
     margin: 0 auto;
     height: 2rem;
     width: 2rem;
-    background: linear-gradient(180deg, #808080 50%, #333 50%);
+    background: linear-gradient(180deg, #CCCCCC 50%, #1F1F1F 50%);
     transform: rotate(45deg);
 }
 
@@ -1270,9 +1271,6 @@ display: none;
         flex-direction: column;
     }
 
-    .gradient_overlay {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 87%);
-    }
 
     nav ul {
         flex-direction: row;
@@ -1383,7 +1381,7 @@ display: none;
         right: 0;
         padding: 0;
         margin: 0;
-        z-index: 10;
+        z-index: 100;
         font-size: 1.5rem;
         justify-content: center
     }

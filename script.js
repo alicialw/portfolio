@@ -56,7 +56,7 @@ toggleTheme.addEventListener('click', function() {
             lightMode.style.opacity = '1';
             rainbowMode.style.opacity = '0';
             gradientOverlays.forEach(overlay => {
-                overlay.style.filter = 'none';
+                overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
             });
             isFilterApplied = true;
         } else {
@@ -66,13 +66,13 @@ toggleTheme.addEventListener('click', function() {
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '1';
                 gradientOverlays.forEach(overlay => {
-                    overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
+                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #3B08A3 100%)';
                 });
             } else {
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
-                    overlay.style.filter = 'none';
+                    overlay.style.background = 'linear-gradient(0deg, rgba(59, 8, 163, 0) 0%, #000000 100%)';
                 });
                 isFilterApplied = false;
             }
@@ -83,7 +83,7 @@ toggleTheme.addEventListener('click', function() {
             lightMode.style.opacity = '1';
             rainbowMode.style.opacity = '0';
             gradientOverlays.forEach(overlay => {
-                overlay.style.filter = 'none';
+                overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
             });
             isFilterApplied = true;
         } else {
@@ -92,13 +92,13 @@ toggleTheme.addEventListener('click', function() {
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '1';
                 gradientOverlays.forEach(overlay => {
-                    overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
+                    overlay.style.background = 'linear-gradient(0deg, rgba(59, 8, 163, 0) 0%, #3B08A3 100%)';
                 });
             } else {
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
-                    overlay.style.filter = 'none';
+                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #3B08A3 100%)';
                 });
                 isFilterApplied = false;
             }
