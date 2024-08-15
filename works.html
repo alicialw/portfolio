@@ -29,12 +29,13 @@
 </head>
 
 <body onload="loaderFunction()">
-    <div id="loader"><div id="loader_circles"></div></div>
+    
     <div id="main">
-    <div class="gradient_overlay" id="gradient_top"></div>
-    <div class="gradient_overlay" id="gradient_bottom"></div>
-    <div class="gradient_overlay" id="gradient_left"></div>
-    <div class="gradient_overlay" id="gradient_right"></div>
+        <div class="gradient_overlay" id="gradient_top"></div>
+        <div class="gradient_overlay" id="gradient_bottom"></div>
+        <div id="loader"><div id="loader_circles"></div></div>
+        <div id="light_mode"></div>
+        <div id="rainbow_mode"></div>
     <div class="background_video works_video"><video src="assets/images/background.mp4" oncontextmenu="return false;" draggable="false" playsinline autoplay muted loop></video></div>
     <nav>
             <ul class="load1">
@@ -43,6 +44,11 @@
                 <li class="works select"><a href="works.html">&#x2198 works</a></li>
             </ul>
         </nav>
+
+        <div class="toggleGroup">
+            <button type="button" id="toggleTheme"><div id="theme_palette"></div></button>
+            </div>
+    
         <div class="works_list">
             <ul class="load3">
                 <li id="work1"><video src="assets/images/works/GLAMS_VE.mp4" oncontextmenu="return false;" draggable="false" playsinline autoplay muted loop></video>

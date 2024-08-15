@@ -1,29 +1,29 @@
-const toggleButton = document.getElementById('toggleAbout');
+const toggleAbout = document.getElementById('toggleAbout');
 const aboutLyrics = document.querySelector('.about_lyrics');
 const aboutContainer = document.querySelector('.about_container');
 
 aboutLyrics.style.opacity = 1;
 aboutContainer.style.display = 'none';
-toggleButton.textContent = 'A';
+toggleAbout.textContent = 'A';
 
-toggleButton.addEventListener('click', () => {
+toggleAbout.addEventListener('click', () => {
     if (aboutLyrics.style.opacity == 0) {
         aboutLyrics.style.opacity = 1;
         aboutLyrics.style.zIndex = 5;
         aboutContainer.style.display = 'none';
-        toggleButton.textContent = 'A'; 
+        toggleAbout.textContent = 'A'; 
     } else {
         aboutLyrics.style.opacity = 0;
         aboutLyrics.style.zIndex = -1;
         aboutContainer.style.display = 'flex';
-        toggleButton.textContent = '⏵'; 
+        toggleAbout.textContent = '⏵'; 
     }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
     const lyricsElements = aboutLyrics.querySelectorAll('p, li, a');
 
-    aboutLyrics.addEventListener('scroll', function() {
+    function applyEffect() {
         const scrollPosition = aboutLyrics.scrollTop;
         const scrollCenter = aboutLyrics.clientHeight / 2;
 
@@ -38,5 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
             element.style.transform = `scale(${scale})`;
             element.style.margin = `calc(var(--lyrics) / 5 * ${opacity})`;
         });
-    });
+    }
+
+    aboutLyrics.addEventListener('scroll', applyEffect);
+
+    applyEffect(); // Apply effect once on DOMContentLoaded
 });

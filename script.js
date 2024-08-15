@@ -39,6 +39,74 @@ window.addEventListener("loading", function() {
     document.body.style.display = "flex"; 
 });
 
+let isFilterApplied = false;
+
+const toggleTheme = document.getElementById('toggleTheme');
+const body = document.querySelector('body');
+const worksFrame = document.querySelector('.works_list');
+const gradientOverlays = document.querySelectorAll('.gradient_overlay');
+const lightMode = document.getElementById('light_mode');
+const rainbowMode = document.getElementById('rainbow_mode');
+
+toggleTheme.addEventListener('click', function() {
+    if (worksFrame) {
+        if (!isFilterApplied) {
+            body.style.filter = 'invert(0.84)';
+            worksFrame.style.filter = 'invert(1) contrast(1.5)';
+            lightMode.style.display = 'block';
+            rainbowMode.style.display = 'none';
+            gradientOverlays.forEach(overlay => {
+                overlay.style.filter = 'none';
+            });
+            isFilterApplied = true;
+        } else {
+            if (lightMode.style.display === 'block') {
+                body.style.filter = 'invert(0)';
+                worksFrame.style.filter = 'invert(0) contrast(1)';
+                lightMode.style.display = 'none';
+                rainbowMode.style.display = 'block';
+                gradientOverlays.forEach(overlay => {
+                    overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
+                });
+            } else {
+                lightMode.style.display = 'none';
+                rainbowMode.style.display = 'none';
+                gradientOverlays.forEach(overlay => {
+                    overlay.style.filter = 'none';
+                });
+                isFilterApplied = false;
+            }
+        }
+    } else {
+        if (!isFilterApplied) {
+            body.style.filter = 'invert(0.84)';
+            lightMode.style.display = 'block';
+            rainbowMode.style.display = 'none';
+            gradientOverlays.forEach(overlay => {
+                overlay.style.filter = 'none';
+            });
+            isFilterApplied = true;
+        } else {
+            if (lightMode.style.display === 'block') {
+                body.style.filter = 'invert(0)';
+                lightMode.style.display = 'none';
+                rainbowMode.style.display = 'block';
+                gradientOverlays.forEach(overlay => {
+                    overlay.style.filter = 'invert(15%) sepia(83%) saturate(5325%) hue-rotate(267deg) brightness(68%) contrast(125%)';
+                });
+            } else {
+                lightMode.style.display = 'none';
+                rainbowMode.style.display = 'none';
+                gradientOverlays.forEach(overlay => {
+                    overlay.style.filter = 'none';
+                });
+                isFilterApplied = false;
+            }
+        }
+    }
+});
+
+
 
 
 

@@ -29,8 +29,10 @@
 </head>
 
 <body onload="loaderFunction()">
-    <div id="loader"><div id="loader_circles"></div></div>
     <div id="main">
+        <div id="light_mode"></div>
+        <div id="rainbow_mode"></div>
+        <div id="loader"><div id="loader_circles"></div></div>
         <div class="background_video"><video src="assets/images/background.mp4" oncontextmenu="return false;" draggable="false" playsinline autoplay muted loop></video></div>
         <nav class="">
             <ul class="load1">
@@ -40,6 +42,9 @@
                 <li class="works"><a href="works.html">works</a></li>
             </ul>
         </nav>
+
+        <div class="toggleGroup toggleIndex"><button type="button" id="toggleTheme"><div id="theme_palette"></div></button></div>
+
         <div class="cd_player">
             <object type="image/svg+xml" data="assets/images/Base.svg" id="base"></object>
             <object type="image/svg+xml" data="assets/images/Disk.svg" id="cd"></object>

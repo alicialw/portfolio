@@ -8,6 +8,14 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -18,7 +26,50 @@ body {
     font-family: "Space Grotesk", monospace, sans-serif;
     text-wrap: pretty;
     z-index: -1;
+    filter: invert(0);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: black;
+    background: white;
+  }
+  
+::selection {
+    color: black;
+    background: white;
+  }
+
+#light_mode {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background: #E08312;
+    mix-blend-mode: overlay;
+    z-index: 98;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+#rainbow_mode {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background: #5200B9;
+    mix-blend-mode: difference;
+    z-index: 98;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 
 #loader {
     position: fixed;
@@ -26,6 +77,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: 100;
+    left: 0;
+    top:0;
     opacity: 1;
     transition: opacity 1s;
 }
@@ -82,17 +135,19 @@ span.line {
     margin: 0;
     padding: var(--rmg);
     z-index: 1;
+    background: black;
 }
 
 .gradient_overlay {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    margin: 0 calc(var(--rmg)*-1);
-    position: absolute;
+    margin: 0 calc(var(--rmg)*-1) ;
+    position: fixed;
     height: 25%;
     width: 100%;
-    z-index: 3;
+    z-index: 99;
     overflow: hidden;
     pointer-events: none;
+    filter: none;
 }
 
 #gradient_top {
@@ -132,7 +187,6 @@ span.line {
     justify-content: space-between;
     align-items: stretch;
     margin: calc(var(--rmg) * -1);
-
 }
 
 .background_ video video {
@@ -165,7 +219,7 @@ nav ul {
     padding: 0;
     width: 100%;
     justify-content: space-between;
-    z-index: 100
+    z-index: 100;
 }
 
 nav li {
@@ -176,10 +230,7 @@ nav li {
 }
 
 nav li a {
-    display: inline-flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
     color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: calc(var(--rmg)/3*4);
@@ -193,7 +244,9 @@ nav li a {
     z-index: 100;
 }
 
-nav li:hover {
+nav li:hover,
+.about_container a:hover,
+.about_lyrics a:hover {
     opacity: 1;
     filter: blur(4px);
     pointer-events: auto;
@@ -219,17 +272,17 @@ nav li:hover a {
     height: 4rem;
     display: flex;
     order: 2;
-    transform-origin: center;
-    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-50%);
     position: fixed;
     top: 50%;
-    z-index: 100
+    z-index: 100;
 }
 
 #logo {
     height: 100%;
     display: flex;
-    position: relative;
+    position: relative
 }
 
 .works {
@@ -251,7 +304,7 @@ nav li:hover a {
 .select_svg {
     height: 8rem;
     opacity: 1;
-    transform: translateX(0%) translateY(-50%) rotate(0deg);
+    transform: rotate(0deg) translateY(-50%);
 }
 
 .cd_player {
@@ -263,6 +316,7 @@ nav li:hover a {
     align-items: center;
     margin: 0;
     margin-left: 33%;
+    overflow: hidden;
 }
 
 #base,
@@ -275,6 +329,8 @@ nav li:hover a {
     transform-origin: center;
     flex: 1;
     height: calc(100vh - var(--rmg)*2);
+    pointer-events: none;
+    overflow: hidden;
 }
 
 #cd {
@@ -287,6 +343,7 @@ nav li:hover a {
 }
 
 #cd_overlay {
+    overflow: hidden;
     animation-name: spinning;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -340,6 +397,7 @@ nav li:hover a {
 .about_lyrics {
     width: calc((100% - var(--rmg)*5) / 4 * 3 + var(--rmg)*2);
     height: 100%;
+    background: black;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -347,7 +405,6 @@ nav li:hover a {
     justify-content: flex-start;
     overflow-x:hidden;
     overflow-y: scroll;
-    background: black;
     z-index: 5;
     padding: 20% var(--rmg);
     right: 0;
@@ -420,35 +477,76 @@ nav li:hover a {
     margin-bottom: var(--rmg);
 }
 
-#toggleAbout {
+button {
     display: block;
     aspect-ratio: 1 / 1;
     background: black;
-    border: solid 1px white;
-    right: var(--rmg);
-    border-radius: 1rem;
+    border: solid 2px white;
+    border-radius: 100%;
     height: 48px;
     width: 48px;
-    position: fixed;
+    position: relative;
     color:white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
-    opacity: 0.75;
-    z-index: 10;
+    opacity: 0.5;
 }
 
-#toggleAbout:hover{
+.toggleGroup {
+    display: flex;
+    position: fixed;
+    flex-direction: row-reverse;
+    gap: 16px;
+    right: var(--rmg);
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+.toggleIndex {
+    display: block;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: calc((50% - var(--rmg)/2));
+    right: calc((100vh - var(--rmg))/2);
+    height: 48px;
+    width: 48px;
+    z-index: 100;
+    
+}
+
+.toggleIndex button {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+    @keyframes pulse {
+        0%,100% {transform: rotate(45deg) scale(0.84)}
+        50% {transform: rotate(405deg) scale(1.08)}
+    }
+
+button:hover{
     opacity: 1;
 }
 
-#toggleAbout:active{
+button:active{
     background: white;
     border: solid 1px black;
     color:black;
 }
+
+#theme_palette {
+    border-radius: 100%;
+    margin: 0 auto;
+    height: 2rem;
+    width: 2rem;
+    background: linear-gradient(180deg, #808080 50%, #333 50%);
+    transform: rotate(45deg);
+}
+
 
 .about_container {
     display: flex;
@@ -470,9 +568,9 @@ nav li:hover a {
     /* Firefox */
 }
 
-*::-webkit-scrollbar {
-    display: none;
-}
+
+
+
 
 .about_grid {
     display: grid;
@@ -555,6 +653,7 @@ nav li:hover a {
     transform-origin: center;
     overflow-x: visible;
     overflow-y: auto;
+    z-index: 98;
     /*transform-origin: center;
     transform: translateY(-50%) rotate(-90deg);*/
 }
@@ -1169,6 +1268,10 @@ display: none;
         flex-direction: column;
     }
 
+    .gradient_overlay {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 87%);
+    }
+
     nav ul {
         flex-direction: row;
     }
@@ -1270,12 +1373,32 @@ display: none;
         width: 75%;
     }
 
-    #toggleAbout {
-        transform-origin: center;
-        left: calc((100% - 48px)/2);
+
+    .toggleGroup {
+        width: 100%;
+        margin: 0;
         bottom: 5%;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 10;
         font-size: 1.5rem;
-        border-radius: 0.5rem;
+        justify-content: center
+    }
+
+    .toggleIndex {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        top: 25%;
+        left: 0;
+        z-index: 100;
+    }
+
+    .toggleIndex button {
+        opacity: 0.5;
     }
 
     .about_container {
@@ -1298,7 +1421,7 @@ display: none;
 
     .works_list ul {
         position: relative;
-        padding: 50% 0;
+        padding: 50% 0 75%;
         overflow-x:hidden;
     }
 

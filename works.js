@@ -3,6 +3,7 @@ const worksList = document.querySelector('.works_list');
 const worksListItems = document.querySelectorAll('.works_list li');
 
 const worksListMiddle = worksList.offsetTop + (worksList.offsetHeight / 2);
+const worksListUpper = worksList.offsetTop + (worksList.offsetHeight / 3);
 let topItemIndex = 0;
 
 const getItemTop = (item) => {
@@ -16,10 +17,14 @@ const getItemHeight = (item) => {
     return item.offsetHeight + marginTop + marginBottom;
 };
 
+
+
 worksList.addEventListener('scroll', function() {
+
     worksListItems.forEach((item, index) => {
         const itemTop = getItemTop(item);
         const itemHeight = getItemHeight(item);
+
 
         if (window.matchMedia('(min-aspect-ratio: 4/5)').matches) {
             if (itemTop < worksListMiddle && itemTop + itemHeight > worksListMiddle) {
@@ -43,15 +48,16 @@ worksList.addEventListener('scroll', function() {
                             link.style.opacity = 0;
                         }
                     });
+                    
                 }
             }
         } else if (window.matchMedia('(max-aspect-ratio: 4/5)').matches) {
-            if (itemTop < worksListMiddle && itemTop + itemHeight > worksListMiddle) {
+            if (itemTop < worksListUpper && itemTop + itemHeight > worksListUpper) {
                 if (index !== topItemIndex) {
                     worksListItems[topItemIndex].style.transform = 'rotateX(-60deg) rotateY(0deg) rotateZ(45deg)';
                     topItemIndex = index;
                     item.style.transform = 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
-                    item.style.margin = 'var(--rmg) 0';
+                    item.style.marginTop = 'var(--rmg)';
                     wvideos.forEach((video, i) => {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];
