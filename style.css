@@ -272,6 +272,7 @@ nav li:hover a {
 
 .alicia {
     height: 4rem;
+    padding:0;
     display: flex;
     order: 2;
     transform-origin: top left;
@@ -281,10 +282,17 @@ nav li:hover a {
     z-index: 100;
 }
 
+.alicia a {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
 #logo {
     height: 100%;
-    display: flex;
-    position: relative
+    position: relative;
+    object-fit: contain;
+    align-items: center;
 }
 
 .works {
@@ -1304,7 +1312,8 @@ display: none;
         height: 3rem;
         position: fixed;
         top: 0;
-        transform: translate(-50%, 0) rotate(0);
+        transform-origin: center;
+        transform: rotate(0) translateX(-50%);
         left: 50%;
     }
 
