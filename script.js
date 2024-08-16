@@ -69,6 +69,7 @@ toggleTheme.addEventListener('click', function() {
                     overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #3B08A3 100%)';
                 });
             } else {
+                body.style.filter = 'invert(0)';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
@@ -95,10 +96,11 @@ toggleTheme.addEventListener('click', function() {
                     overlay.style.background = 'linear-gradient(0deg, rgba(59, 8, 163, 0) 0%, #3B08A3 100%)';
                 });
             } else {
+                body.style.filter = 'invert(0)';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {
-                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #3B08A3 100%)';
+                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
                 });
                 isFilterApplied = false;
             }

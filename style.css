@@ -562,6 +562,7 @@ button:active{
 
 .about_container {
     display: flex;
+    background: black;
     position: relative;
     width: calc((100% - var(--rmg)*5) / 4 * 3 + var(--rmg)*2);
     height: 100%;
