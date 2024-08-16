@@ -94,6 +94,7 @@ body {
     aspect-ratio: 1;
     border-radius: 50%;
     animation: load 1.5s infinite;
+    -webkit-animation: load 1.5s infinite;
     opacity: 1;
     scale: 3;
     rotate: -90deg;
@@ -111,13 +112,13 @@ body {
     90% {transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
   }
 
-  /*@keyframes load {
+  @-webkit-keyframes load {
     0%,
-    100%{transform:rotateY(-45deg) translate(-35px);box-shadow:  0     0 grey, 0     0 grey}
-    40% {transform:rotateY(-45deg) translate( 35px);box-shadow: -15px  0 grey,-30px  0 grey}
-    50% {transform:rotateY(-45deg) translate( 35px);box-shadow:  0     0 grey, 0     0 grey}
-    90% {transform:rotateY(-45deg) translate(-35px);box-shadow:  15px  0 grey, 30px  0 grey}
-  }*/
+    100%{transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    40% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(-15px 0px 0px grey) drop-shadow(-15px 0px 0px dimgrey)}
+    50% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    90% {transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
+  }
 
 span.line {
     display: inline-block;
@@ -419,12 +420,13 @@ nav li:hover a {
     padding: 20% var(--rmg);
     right: 0;
     top: 0;
-    opacity: 1;
+    opacity: 0;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
     transition: opacity 0.5s;
+    animation-delay: 0s;
 }
 
 .about_lyrics p, .about_lyrics a, .about_lyrics li {
@@ -451,7 +453,7 @@ nav li:hover a {
 }
 
 
-@keyframes lyrics {
+/*@keyframes lyrics {
     0% {
         opacity: 0;
         font-size: 0.5rem;
@@ -470,7 +472,7 @@ nav li:hover a {
         margin: 0;
     }
 
-}
+}*/
 
 #profile_lyrics {
     display: block;
@@ -485,6 +487,7 @@ nav li:hover a {
     background: url(assets/images/Profile.png) no-repeat center;
     background-size: cover;
     margin-bottom: var(--rmg);
+    animation: none;
 }
 
 button {
@@ -504,6 +507,7 @@ button {
     font-weight: 400;
     text-transform: uppercase;
     filter: brightness(0.5);
+    transition: 0.5s;
 }
 
 .toggleGroup {
@@ -541,6 +545,7 @@ button {
 
 button:hover{
     filter: brightness(1);
+    transition: 0.5s;
 }
 
 button:active{
@@ -557,8 +562,13 @@ button:active{
     width: 2rem;
     background: linear-gradient(180deg, #CCCCCC 50%, #1F1F1F 50%);
     transform: rotate(45deg);
+    transition: 0.5s;
 }
 
+button:has(#theme_palette):hover #theme_palette {
+    transform: rotate(135deg);
+    transition: 0.5s;
+}
 
 .about_container {
     display: flex;
@@ -578,10 +588,9 @@ button:active{
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    animation-delay: 0s;
+    transition-delay: 0s;
 }
-
-
-
 
 
 .about_grid {
@@ -828,7 +837,10 @@ display: none;
     filter: invert(0) grayscale(1);
 }
 
-
+.load4 {
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards;
+}
 
 @media (hover: none) and (pointer: none) {
 
@@ -1253,22 +1265,17 @@ display: none;
 
     .load1 {
         opacity: 0;
-        animation: fadeInLeft 1s forwards;
+        animation: fadeInLeft 1s 1s forwards;
     }
 
     .load2 {
         opacity: 0;
-        animation: fadeInRight 1s forwards;
+        animation: fadeInRight 1s 0s forwards;
     }
 
     .load3 {
         opacity: 0;
-        animation: fadeInUp 1s forwards;
-    }
-
-    .load4 {
-        opacity: 0;
-        animation: fadeInDown 1s forwards;
+        animation: fadeInUp 1s 1s forwards;
     }
 
 
@@ -1287,17 +1294,17 @@ display: none;
 
     .load1 {
         opacity: 0;
-        animation: fadeInDown 1s forwards;
+        animation: fadeInDown 1s 1s forwards;
     }
 
     .load2 {
         opacity: 0;
-        animation: fadeInUp 1s forwards;
+        animation: fadeInUp 1s 0s forwards;
     }
 
     .load3 {
         opacity: 0;
-        animation: fadeInUp 1s forwards;
+        animation: fadeInUp 1s 1s forwards;
     }
 
     .about {
@@ -1525,5 +1532,15 @@ display: none;
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
