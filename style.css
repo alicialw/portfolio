@@ -627,6 +627,15 @@ button:has(#theme_palette):hover #theme_palette {
     padding: 0;
 }
 
+.indent {
+    /*text-indent: -1rem;*/
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
 #profile {
     display: flex;
     align-items: center;
@@ -838,7 +847,7 @@ display: none;
 
 .load4 {
     opacity: 0;
-    animation: fadeIn 1s 1s forwards;
+    animation: fadeIn 1s forwards;
 }
 
 @media (hover: none) and (pointer: none) {
@@ -1264,7 +1273,7 @@ display: none;
 
     .load1 {
         opacity: 0;
-        animation: fadeInLeft 1s 1s forwards;
+        animation: fadeInLeft 1s forwards;
     }
 
     .load2 {
@@ -1274,7 +1283,7 @@ display: none;
 
     .load3 {
         opacity: 0;
-        animation: fadeInUp 1s 1s forwards;
+        animation: fadeInUp 1s forwards;
     }
 
 
@@ -1293,7 +1302,7 @@ display: none;
 
     .load1 {
         opacity: 0;
-        animation: fadeInDown 1s 1s forwards;
+        animation: fadeInDown 1s forwards;
     }
 
     .load2 {
@@ -1303,7 +1312,7 @@ display: none;
 
     .load3 {
         opacity: 0;
-        animation: fadeInUp 1s 1s forwards;
+        animation: fadeInUp 1s forwards;
     }
 
     .about {

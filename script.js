@@ -15,11 +15,9 @@ function showPage() {
         main.style.display = "flex";
 
         setTimeout(() => {
-            const elements = document.querySelectorAll(".load1, .load2, load3, .load4");
+            const elements = document.querySelectorAll(".load1, .load2, .load3, .load4");
             elements.forEach(element => {
-                setTimeout(() => {
-                    element.classList.add("load");
-                }, 0);
+                element.classList.add("load");
             });
         }, 500);
     }, 500);
