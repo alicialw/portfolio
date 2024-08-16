@@ -55,9 +55,10 @@ worksList.addEventListener('scroll', function() {
             if (itemTop < worksListUpper && itemTop + itemHeight > worksListUpper) {
                 if (index !== topItemIndex) {
                     worksListItems[topItemIndex].style.transform = 'rotateX(-60deg) rotateY(0deg) rotateZ(45deg)';
+                    worksListItems[topItemIndex].style.margin= 'calc(var(--rmg)*-4) 0';
                     topItemIndex = index;
                     item.style.transform = 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
-                    item.style.marginTop = 'var(--rmg)';
+                    item.style.margin = '0';
                     wvideos.forEach((video, i) => {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];
