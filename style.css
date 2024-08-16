@@ -17,6 +17,7 @@
     display: none;
 }
 
+
 body {
     margin: 0;
     height: 100vh;
@@ -227,7 +228,7 @@ nav ul {
 nav li {
     float: left;
     flex: 0;
-    filter:brightness(0.5);
+    filter:brightness(0.25);
     z-index: 100;
 }
 
@@ -260,6 +261,10 @@ nav li:hover a {
     cursor: pointer;
 }
 
+h1 {
+    display: none;
+}
+
 .about {
     position: fixed;
     bottom: 0;
@@ -271,7 +276,7 @@ nav li:hover a {
 }
 
 .alicia {
-    height: 4rem;
+    height: var(--rmg);
     padding:0;
     display: flex;
     order: 2;
@@ -312,7 +317,7 @@ nav li:hover a {
 }
 
 .select_svg {
-    height: 8rem;
+    height: 4rem;
     filter:brightness(1);
     transform: rotate(0deg) translateY(-50%);
 }
@@ -743,6 +748,8 @@ button:has(#theme_palette):hover #theme_palette {
 .works_list a {
     position: relative;
     display: flex;
+    flex-direction: column;
+    gap: 0;
     border-radius: 1000px;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     width: 100%;
@@ -779,14 +786,14 @@ button:has(#theme_palette):hover #theme_palette {
 
 }
 
-.works_list p {
+.works_list h2 {
     color: #FFF;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: calc(var(--rmg));
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin: 2rem;
+    margin: 0 calc(var(--rmg));
     white-space: wrap;
     text-wrap: balance;
     text-align: center;
@@ -795,12 +802,20 @@ button:has(#theme_palette):hover #theme_palette {
     cursor: pointer;
 }
 
-.works_list a:hover{
-    opacity: 1;
-    transition: 0.5s;
+.works_list h3 {
+    color: #FFF;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: wrap;
+    text-wrap: balance;
+    text-align: center;
+    z-index: 1;
     pointer-events: auto;
     cursor: pointer;
-    transition: 0.5s;
+    text-transform: uppercase;
 }
 
 
@@ -1049,7 +1064,7 @@ display: none;
     }
 
     .select_svg {
-        height: 8rem;
+        height: 4rem;
     }
 
     #cd_label>span {
@@ -1461,9 +1476,14 @@ display: none;
         opacity: 1;
     }
 
-    .works_list p {
+    .works_list h2 {
         font-size: calc(var(--rmg)/3*4);
     }  
+
+    .works_list h3 {
+        display: none;
+    }
+
     .works_list li:hover {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         transition: 0.5s;

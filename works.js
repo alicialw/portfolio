@@ -66,6 +66,13 @@ worksList.addEventListener('scroll', function() {
                             video.style.filter = 'none';
                         }
                     });
+                    wtypes.forEach((video, i) => {
+                        if (i !== index) {
+                            video.style.display = 'none';
+                        } else {
+                            video.style.display = 'block';
+                        }
+                    });
                 }
             }
         }
@@ -74,6 +81,7 @@ worksList.addEventListener('scroll', function() {
 
 const wlinks = document.querySelectorAll('.works_list a');
 const wvideos = document.querySelectorAll('.works_list video, .works_list img');
+const wtypes = document.querySelectorAll('.works_list h3');
 const defaultFilters = [];
 
 wvideos.forEach(wvideo => {
