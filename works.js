@@ -38,7 +38,7 @@ worksList.addEventListener('scroll', function() {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];
                         } else {
-                            video.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
+                            video.style.filter = 'none';
                         }
                     });
                     wlinks.forEach((link, i) => {
@@ -62,7 +62,7 @@ worksList.addEventListener('scroll', function() {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];
                         } else {
-                            video.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
+                            video.style.filter = 'none';
                         }
                     });
                 }
