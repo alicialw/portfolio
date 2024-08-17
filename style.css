@@ -330,7 +330,7 @@ h1 {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    margin-left: 33%;
+    /*margin-left: 33%;*/
     overflow: hidden;
 }
 
@@ -338,12 +338,13 @@ h1 {
 #cd,
 #cd_overlay,
 #divider {
-    position: fixed;
+    position: absolute;
     display: flex;
     mix-blend-mode: difference;
     transform-origin: center;
     flex: 1;
-    height: calc(100vh - var(--rmg)*2);
+    width: 100%;
+    /*height: calc(100vh - var(--rmg)*2);*/
     pointer-events: none;
     overflow: hidden;
 }
@@ -512,6 +513,8 @@ button {
     text-transform: uppercase;
     filter: brightness(0.5);
     transition: 0.5s;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .toggleGroup {
@@ -529,27 +532,35 @@ button {
 .toggleIndex {
     display: block;
     position: fixed;
-    margin: 0;
     padding: 0;
-    top: calc((50% - var(--rmg)/2));
-    right: calc((100vh - var(--rmg))/2);
-    height: 48px;
-    width: 48px;
+    margin: 0;
+    /*top: calc((100vh - var(--rmg))/2);
+    right: calc((100vh - var(--rmg))/2);*/
+    top: calc(var(--rmg)*1.5);
+    right: calc(var(--rmg)*1.5);
     
 }
 
-.toggleIndex button {
-    animation: pulse 1.5s ease-in-out infinite;
+.toggleIndex #theme_palette {
+    animation: pulse 3s ease-in-out infinite;
+    border: solid 2px grey;
 }
 
     @keyframes pulse {
-        0%,100% {transform: rotate(45deg) scale(0.84)}
-        50% {transform: rotate(405deg) scale(1.08)}
+        0%,100% {transform: rotate(45deg) /*scale(0.84)*/}
+        50% {transform: rotate(405deg) /*scale(1.08)*/}
     }
+
+.toggleIndex button {
+    filter: brightness(1);
+    border: 0;
+}
 
 button:hover{
     filter: brightness(1);
     transition: 0.5s;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 button:active{
@@ -1304,6 +1315,23 @@ display: none;
 
 }
 
+
+@media only screen and (min-aspect-ratio: 13 / 10) {
+    .toggleIndex {
+        top: calc(var(--rmg)*1.5);
+    }
+}
+
+@media only screen and (max-aspect-ratio: 13 / 10) {
+    .cd_player {
+        max-width: calc(100% - 11rem - var(--rmg)*2);
+    }
+    .toggleIndex {
+        top: calc((100vh - var(--rmg))/2 - (100vw - 11rem - var(--rmg)*2)/2 + var(--rmg)*2);
+    }
+}
+
+
 @media only screen and (max-aspect-ratio: 4 / 5) {
 
     #main {
@@ -1358,7 +1386,7 @@ display: none;
     }
 
     .cd_player {
-        width: calc(100vw - var(--rmg)*2);
+        max-width: calc(100vw - var(--rmg)*2);
         height: auto;
         aspect-ratio: 1/1;
         display: flex;
@@ -1372,7 +1400,7 @@ display: none;
     #cd,
     #cd_overlay,
     #divider {
-        position: fixed;
+        position: absolute;
         display: flex;
         mix-blend-mode: difference;
         transform-origin: center;
