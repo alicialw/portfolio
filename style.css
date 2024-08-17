@@ -261,9 +261,6 @@ nav li:hover a {
     cursor: pointer;
 }
 
-h1 {
-    display: none;
-}
 
 .about {
     position: fixed;
@@ -489,7 +486,7 @@ h1 {
     overflow: hidden;
     aspect-ratio: 1 / 1;
     opacity: 0.25;
-    background: url(assets/images/Profile.png) no-repeat center;
+    background: url(assets/media/Profile.png) no-repeat center;
     background-size: cover;
     margin-bottom: var(--rmg);
     animation: none;
@@ -661,7 +658,7 @@ button:has(#theme_palette):hover #theme_palette {
     overflow: hidden;
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
-    background: url(assets/images/Profile.png) no-repeat center;
+    background: url(assets/media/Profile.png) no-repeat center;
     background-size: cover;
     grid-area: 4 / 3 / 4 / 3;
     align-self: end;
@@ -807,8 +804,8 @@ button:has(#theme_palette):hover #theme_palette {
     z-index: 0;
     mix-blend-mode: normal;
     filter: invert(1) grayscale(1);
-    -webkit-mask-image: url(assets/images/works/CDouter_maskpng);
-    mask-image: url(assets/images/works/CDouter_mask.png);
+    -webkit-mask-image: url(assets/media/works/CDouter_maskpng);
+    mask-image: url(assets/media/works/CDouter_mask.png);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -881,9 +878,7 @@ button:has(#theme_palette):hover #theme_palette {
     transition: 0.5s;
 }
 
-.works_focusH {
-display: none;
-}
+
 
 /*margin-top: calc(var(--rmg)*12);
     margin-bottom: calc(var(--rmg)*-8);*/
@@ -895,6 +890,166 @@ display: none;
 .load4 {
     opacity: 0;
     animation: fadeIn 1s forwards;
+}
+
+.side {
+    transform: translateX(100%);
+    right: 0;
+    opacity: 1;
+    overflow: visible;
+    padding: 0;
+    z-index: 10;
+    width: 50%;
+    transition: 1s;
+}
+
+.works_list.side ul {
+    overflow: scroll;
+    bottom: 0;
+    margin-right: calc(var(--rmg)*-2);
+    padding: calc(var(--rmg)*2) 0;
+    padding-right: calc(var(--rmg)*1);
+    align-items: flex-end;
+}
+
+.works_list.side li {
+    height: auto;
+    margin-bottom: calc(var(--rmg)*-7);
+    margin-left: 0;
+    margin-right: 0;
+    filter: invert(1);
+    opacity: 0.25;
+    overflow: visible;
+    transform-style: preserve-3d;
+    transform-origin: right center;
+    transform: scale(0.25) rotateX(-60deg) rotateY(0deg) rotateZ(45deg);
+}
+.watching {
+    filter: none !important;
+    opacity: 0.5 !important;
+}
+
+.watching:hover {
+    filter: invert(0);
+    opacity: 1 !important;
+    transform: rotateX(0) rotateY(0);
+    margin-bottom: calc(var(--rmg)*-6);
+}
+
+.works_list.side a {
+    opacity: 0;
+    transform: none;
+    background: none;
+    transform: scale(1.5);
+    overflow: visible;
+    align-items: stretch;
+}
+
+.side video, .side  img {
+    transform-style: preserve-3d;
+    transform: none;
+}
+
+.works_list.side a:hover {
+    opacity: 1;
+}
+
+.works_list.side a > h2 {
+    transform: translateX(-100%);
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.works_list.side li:hover {
+    filter: invert(0);
+    opacity: 1;
+    transform: scale(0.25) rotateX(0) rotateY(0);
+    margin-bottom: calc(var(--rmg)*-6);
+}
+
+.work_page {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    z-index: 5;
+    left: var(--rmg);
+    margin: calc(var(--rmg)*-1);
+    align-items: center;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.thumbnail {
+    display: block;
+    position: relative;
+    margin: calc(var(--rmg)*-1) 0 0;
+    width: 100%;
+    min-height: 75vh;
+    -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    object-fit: cover;
+    background-attachment: fixed;
+}
+
+#g24_thumbnail {
+    background: url(assets/media/works/G24/poster.png) no-repeat center;
+}
+
+.work_description {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 0 20%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    z-index: 1;
+}
+
+.work_page h1 {
+    position: relative;
+    color:white;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: calc(var(--rmg)/3*4);
+    line-height: calc(var(--rmg)/3*4);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.work_page h3 {
+    position: relative;
+    color:white;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: calc(var(--rmg)*1.5);
+}
+
+.work_page p {
+    padding: 0 var(--rmg);
+    color: white;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: 1rem;
+    line-height: normal;
+    text-align: center;
+}
+
+.work_page img, .work_page video {
+    object-fit: contain;
+    max-width: 75%;
 }
 
 @media (hover: none) and (pointer: none) {
@@ -1184,7 +1339,7 @@ display: none;
         max-height: calc(var(--rmg)*8);
         aspect-ratio: 1 / 1;
         border-radius: 1rem;
-        background: url(assets/images/Profile.png) no-repeat center;
+        background: url(assets/media/Profile.png) no-repeat center;
         background-size: cover;
         grid-area: 4 / 3 / 4 / 3;
         align-self: end;
@@ -1277,10 +1432,13 @@ display: none;
 
 @media only screen and (min-aspect-ratio: 4 / 5) {
 
-    .works_focusH {
-        display: flex;
+    .details {
+        width: 30%;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: 1s;
     }
-    
+
     .works_list {
         width: 100%;
         height: 100%;
@@ -1405,6 +1563,10 @@ display: none;
     .works {
         position: fixed;
         left: 0;
+    }
+
+    .side {
+        display: none;
     }
 
     .cd_player {
@@ -1542,7 +1704,7 @@ display: none;
         display: none;
     }
 
-    .works_list li:hover {
+    .works_list.focus li:hover {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         transition: 0.5s;
         z-index: 100;
