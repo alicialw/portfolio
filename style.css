@@ -903,7 +903,7 @@ button:has(#theme_palette):hover #theme_palette {
     transition: 1s;
 }
 
-.side ul {
+.works_list.side ul {
     overflow: scroll;
     bottom: 0;
     margin-right: calc(var(--rmg)*-2);
