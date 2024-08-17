@@ -436,7 +436,7 @@ h1 {
 
 .about_lyrics p, .about_lyrics a, .about_lyrics li {
     display: inline;
-    color: #FFF;
+    color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: var(--lyrics);
     font-style: normal;
@@ -623,7 +623,7 @@ button:has(#theme_palette):hover #theme_palette {
 
 .about_item,
 .about_item a {
-    color: #FFF;
+    color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: 1rem;
     font-style: normal;
@@ -685,6 +685,27 @@ button:has(#theme_palette):hover #theme_palette {
 
 .works_video {
     opacity: calc(1/3);
+}
+
+.cta {
+    display: block;
+    position: absolute;
+    bottom: calc(50% + var(--rmg)*5);
+    right: calc(var(--rmg)*8);
+    color: lightgrey;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    white-space: wrap;
+    text-wrap: balance;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 1;
+    transform: translateX(50%);
+    transition: 0.5s;
+    z-index: 10;
 }
 
 .works_list {
@@ -798,7 +819,7 @@ button:has(#theme_palette):hover #theme_palette {
 }
 
 .works_list h2 {
-    color: #FFF;
+    color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: calc(var(--rmg));
     font-style: normal;
@@ -814,7 +835,7 @@ button:has(#theme_palette):hover #theme_palette {
 }
 
 .works_list h3 {
-    color: #FFF;
+    color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: 1rem;
     font-style: normal;
@@ -897,7 +918,7 @@ display: none;
     }
 
     #cd_label>span {
-        color: #FFF;
+        color: white;
         font-family: "Space Grotesk", monospace, sans-serif;
         font-size: 0.75rem;
         font-style: normal;
@@ -922,7 +943,7 @@ display: none;
     }
 
     #hanoi {
-        font-size: calc(var(--rmg));
+        font-size: calc(var(--rmg)*1.2);
     }
 
     .about_video,
@@ -983,6 +1004,7 @@ display: none;
 
     #skl {
         grid-area: 5 / 2 / 5 / 2;
+        margin-bottom: calc(var(--rmg)*3);;
     }
 
 }
@@ -1079,7 +1101,7 @@ display: none;
     }
 
     #cd_label>span {
-        color: #FFF;
+        color: white;
         font-family: "Space Grotesk", monospace, sans-serif;
         font-size: 1rem;
         font-style: normal;
@@ -1136,7 +1158,7 @@ display: none;
     
     .about_item,
     .about_item a {
-        color: #FFF;
+        color: white;
         font-family: "Space Grotesk", monospace, sans-serif;
         font-size: 1rem;
         font-style: normal;
@@ -1473,6 +1495,14 @@ display: none;
         height: auto;
     }
 
+    .cta {
+        right: 50%;
+        top: 20%;
+        text-wrap: nowrap;
+        opacity: 1;
+        font-size: 1rem;
+    }
+
     .works_list {
         position: relative;
         width: 100%;
@@ -1505,7 +1535,7 @@ display: none;
     }
 
     .works_list h2 {
-        font-size: calc(var(--rmg)/3*4);
+        font-size: calc(var(--rmg)*2);
     }  
 
     .works_list h3 {
