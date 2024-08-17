@@ -903,7 +903,7 @@ button:has(#theme_palette):hover #theme_palette {
     transition: 1s;
 }
 
-.works_list.side ul {
+.side ul {
     overflow: scroll;
     bottom: 0;
     margin-right: calc(var(--rmg)*-2);
@@ -912,7 +912,7 @@ button:has(#theme_palette):hover #theme_palette {
     align-items: flex-end;
 }
 
-.works_list.side li {
+.side li {
     height: auto;
     margin-bottom: calc(var(--rmg)*-7);
     margin-left: 0;
@@ -936,7 +936,7 @@ button:has(#theme_palette):hover #theme_palette {
     margin-bottom: calc(var(--rmg)*-6);
 }
 
-.works_list.side a {
+.side a {
     opacity: 0;
     transform: none;
     background: none;
@@ -950,11 +950,11 @@ button:has(#theme_palette):hover #theme_palette {
     transform: none;
 }
 
-.works_list.side a:hover {
+.side a:hover {
     opacity: 1;
 }
 
-.works_list.side a > h2 {
+.side a > h2 {
     transform: translateX(-100%);
     text-align: right;
     margin: 0;
@@ -962,7 +962,7 @@ button:has(#theme_palette):hover #theme_palette {
     z-index: 10;
 }
 
-.works_list.side li:hover {
+.side li:hover {
     filter: invert(0);
     opacity: 1;
     transform: scale(0.25) rotateX(0) rotateY(0);
