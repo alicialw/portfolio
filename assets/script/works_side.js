@@ -1,40 +1,64 @@
 const side = document.querySelector('.side');
 const details = document.querySelector('.details');
+const workPage = document.querySelector('.work_page');
+const backToTop = document.getElementById('backToTop')
 let timeoutId;
 
 const showDetails = () => {
-    side.style.transform = 'translateX(0%)';
     side.style.opacity = '1';
-    details.style.transform = 'translateX(0)';
     details.style.opacity = '1';
+    backToTop.style.opacity = '0';
 };
 
 const hideDetails = () => {
-    side.style.transform = 'translateX(100%)';
     side.style.opacity = '0';
-    details.style.transform = 'translateX(-50%)';
     details.style.opacity = '0';
+    backToTop.style.opacity = '1';
 };
 
-details.addEventListener('mouseenter', showDetails);
+const scrollToTop = () => {
+    workPage.scrollTop = 0;
+};
+
+showDetails();
+
+backToTop.addEventListener('click', () => {
+    scrollToTop();
+});
+
+workPage.addEventListener('scroll', () => {
+    const scrollPosition = workPage.scrollTop;
+    const windowHeight = workPage.clientHeight;
+    
+    if (window.matchMedia('(min-aspect-ratio: 4/5)').matches) {
+        if (scrollPosition === 0) {
+            showDetails();
+        } else if (scrollPosition >= windowHeight / 2) {
+            hideDetails();
+        }
+    } else if (window.matchMedia('(max-aspect-ratio: 4/5)').matches) {
+        backToTop.style.display = 'none';
+        if (scrollPosition === 0) {
+            showDetails();
+            backToTop.style.display = 'none';
+
+        } else if (scrollPosition >= windowHeight / 3) {
+            hideDetails();
+            backToTop.style.display = 'block';
+        }
+    } else {
+    }
+});
+
+/* details.addEventListener('mouseenter', showDetails);
 side.addEventListener('mouseenter', showDetails);
 
 details.addEventListener('mouseleave', () => {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 5000);
+    timeoutId = setTimeout(hideDetails, 3000);
 });
 
 side.addEventListener('mouseleave', () => {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 5000);
-});
-
-details.addEventListener('click', () => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 5000);
-});
-
-side.addEventListener('click', () => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 5000);
-});
+    timeoutId = setTimeout(hideDetails, 3000);
+}); */

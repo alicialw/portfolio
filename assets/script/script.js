@@ -1,12 +1,12 @@
-var loaderVar;
+let loaderVar;
 
 function loaderFunction() {
     loaderVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
-    var loader = document.getElementById("loader");
-    var main = document.getElementById("main");
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("main");
 
     loader.style.opacity = "0";
 
