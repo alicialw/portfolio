@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             element.style.opacity = opacity;
             element.style.transform = `scale(${scale})`;
-            element.style.margin = `calc(var(--lyrics) / 5 * ${opacity})`;
+            element.style.margin = `calc(var(--lyrics) / 5 * ${opacity}) 0`;
         });
     }
 
     aboutLyrics.addEventListener('scroll', applyEffect);
 
-    applyEffect(); // Apply effect once on DOMContentLoaded
+    applyEffect();
 });

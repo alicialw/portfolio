@@ -85,7 +85,7 @@ body {
     transition: opacity 1s;
 }
 
-#loader_circles {
+/*#loader_circles {
     position: relative;
     top: 50%;
     margin: 0 auto;
@@ -103,7 +103,6 @@ body {
     transform: rotateY(-45deg);
   }
   
-
   @keyframes load {
     0%,
     100%{transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
@@ -119,6 +118,37 @@ body {
     50% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
     90% {transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
   }
+*/
+
+#loader_circles {
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #FFF 0%, #AAA 50%, #FFF 100%);
+    width: 28px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: load 1.5s infinite;
+    -webkit-animation: load 1.5s infinite;
+    opacity: 1;
+    scale: 5;
+    transform-origin: center;
+    -webkit-mask-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 12%, rgba(255, 255, 255, 0.25) 12%, rgba(255, 255, 255, 0.50) 33.75%, silver 34%, rgba(255, 255, 255, 0.50) 43.5%, silver 100%);
+    mask-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 12%, rgba(255, 255, 255, 0.25) 12%, rgba(255, 255, 255, 0.50) 33.75%, silver 34%, rgba(255, 255, 255, 0.50) 43.5%, silver 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateX(-45deg) rotateZ(0);
+  }
+  
+  @keyframes load {to{transform: rotateX(-45deg) rotateZ(1turn)}}
+
+  @-webkit-keyframes load {to{transform: rotateX(-45deg) rotateZ(1turn)}}
 
 span.line {
     display: inline-block;
@@ -147,7 +177,7 @@ span.line {
     position: fixed;
     height: 25%;
     width: 100%;
-    z-index: 99;
+    z-index: 100;
     overflow: hidden;
     pointer-events: none;
     filter: none;
@@ -583,6 +613,11 @@ button:has(#theme_palette):hover #theme_palette {
     transition: 0.5s;
 }
 
+button:has(#theme_palette):active #theme_palette {
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
 @keyframes goUp {
     0% {
         
@@ -922,6 +957,7 @@ button:has(#theme_palette):hover #theme_palette {
     padding: calc(var(--rmg)*2) 0;
     padding-right: calc(var(--rmg)*1);
     align-items: flex-end;
+    pointer-events: none;
 }
 
 .side li {
@@ -929,7 +965,7 @@ button:has(#theme_palette):hover #theme_palette {
     margin-bottom: calc(var(--rmg)*-7);
     margin-left: 0;
     margin-right: 0;
-    filter: invert(1);
+    filter: invert(0);
     opacity: 0.25;
     overflow: visible;
     transform-style: preserve-3d;
@@ -955,6 +991,9 @@ button:has(#theme_palette):hover #theme_palette {
     transform: scale(1.5);
     overflow: visible;
     align-items: stretch;
+    -webkit-box-shadow: calc(var(--rmg)*-8) 0px calc(var(--rmg)*4) 0px black;
+    -moz-box-shadow: calc(var(--rmg)*-8) 0px calc(var(--rmg)*4) 0px black;
+    box-shadow: calc(var(--rmg)*-8) 0px calc(var(--rmg)*4) 0px black;
 }
 
 .side video, .side  img {
@@ -971,8 +1010,7 @@ button:has(#theme_palette):hover #theme_palette {
     text-align: right;
     margin: 0;
     padding: 0;
-    z-index: 10;
-}
+    z-index: 10;}
 
 .side li:hover {
     filter: invert(0);
@@ -1151,7 +1189,10 @@ button:has(#theme_palette):hover #theme_palette {
     margin: 0;
 }
 
-
+.entry {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
 
 @media (hover: none) and (pointer: none) {
 
@@ -1769,6 +1810,16 @@ button:has(#theme_palette):hover #theme_palette {
         opacity: 0.5;
     }
 
+    button:has(#theme_palette):hover #theme_palette {
+        transform: rotate(45deg);
+        transition: 0.5s;
+    }
+
+    button:has(#theme_palette):active #theme_palette {
+        transform: rotate(135deg);
+        transition: 0s;
+    }
+
     .about_container {
         height: auto;
     }
@@ -1788,6 +1839,7 @@ button:has(#theme_palette):hover #theme_palette {
     .works_list {
         position: relative;
         width: 100%;
+        height: auto;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;

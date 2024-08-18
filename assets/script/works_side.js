@@ -49,16 +49,3 @@ workPage.addEventListener('scroll', () => {
     } else {
     }
 });
-
-/* details.addEventListener('mouseenter', showDetails);
-side.addEventListener('mouseenter', showDetails);
-
-details.addEventListener('mouseleave', () => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 3000);
-});
-
-side.addEventListener('mouseleave', () => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(hideDetails, 3000);
-}); */
