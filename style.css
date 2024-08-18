@@ -67,7 +67,7 @@ body {
     opacity: 0;
     background: #5200B9;
     mix-blend-mode: difference;
-    z-index: 98;
+    z-index: 101;
     overflow: hidden;
     pointer-events: none;
 }
@@ -573,6 +573,7 @@ button:active{
     height: 2rem;
     width: 2rem;
     background: linear-gradient(180deg, #CCCCCC 50%, #1F1F1F 50%);
+    rotate: 180deg;
     transform: rotate(45deg);
     transition: 0.5s;
 }
@@ -898,15 +899,18 @@ button:has(#theme_palette):hover #theme_palette {
     opacity: 1;
     overflow: visible;
     padding: 0;
-    z-index: 10;
+    z-index: 99;
     width: 50%;
-    transition: 1s;
+}
+
+.works_list.side {
+    padding-right: calc(var(--rmg)*0.5);
 }
 
 .works_list.side ul {
+    width: auto;
     overflow: scroll;
     bottom: 0;
-    margin-right: calc(var(--rmg)*-2);
     padding: calc(var(--rmg)*2) 0;
     padding-right: calc(var(--rmg)*1);
     align-items: flex-end;
@@ -973,13 +977,14 @@ button:has(#theme_palette):hover #theme_palette {
     display: flex;
     position: fixed;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     max-height: 100%;
-    z-index: 5;
+    z-index: 99;
     left: var(--rmg);
     margin: calc(var(--rmg)*-1);
     align-items: center;
     padding: 0;
+    color:white;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -999,11 +1004,19 @@ button:has(#theme_palette):hover #theme_palette {
     -webkit-mask-size: 100%;
     mask-size: 100%;
     object-fit: cover;
-    background-attachment: fixed;
+    pointer-events: none;
 }
 
 #g24_thumbnail {
     background: url(assets/media/works/G24/poster.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#g23_thumbnail {
+    background: url(assets/media/works/G23/tranhtapthetext.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .work_description {
@@ -1015,24 +1028,23 @@ button:has(#theme_palette):hover #theme_palette {
     align-items: center;
     align-content: center;
     z-index: 1;
+    pointer-events: none;
 }
 
 .work_page h1 {
     position: relative;
-    color:white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: calc(var(--rmg)/3*4);
-    line-height: calc(var(--rmg)/3*4);
+    line-height: 1;
     margin-bottom: 0;
     text-align: center;
 }
 
 .work_page h3 {
     position: relative;
-    color:white;
     font-family: "Space Grotesk", monospace, sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: calc(var(--rmg)/2);
+    line-height: 1;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: calc(var(--rmg)*1.5);
@@ -1040,17 +1052,23 @@ button:has(#theme_palette):hover #theme_palette {
 
 .work_page p {
     padding: 0 var(--rmg);
-    color: white;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: 1rem;
     line-height: normal;
     text-align: center;
 }
 
-.work_page img, .work_page video {
+.work_page img {
     object-fit: contain;
     max-width: 75%;
 }
+
+.work_page video {
+    object-fit: contain;
+    max-width: 100%;
+    margin-bottom: var(--rmg);
+}
+
 
 @media (hover: none) and (pointer: none) {
 
@@ -1439,6 +1457,12 @@ button:has(#theme_palette):hover #theme_palette {
         transition: 1s;
     }
 
+    .works_list.side {
+        width: 25%;
+        padding-right: calc(var(--rmg)*0.5);
+        transition: 1s;
+    }
+
     .works_list {
         width: 100%;
         height: 100%;
@@ -1708,6 +1732,34 @@ button:has(#theme_palette):hover #theme_palette {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         transition: 0.5s;
         z-index: 100;
+    }
+
+    .work_page {
+    }
+
+    .thumbnail {
+        width: 100vw;
+        max-height: 50vh;
+    }
+
+    .work_description {
+        padding: 0 var(--rmg);
+    }
+
+    .work_page h1 {
+        font-size: calc(var(--rmg)*2);
+    }
+
+    .work_page h3 {
+        font-size: calc(var(--rmg)/4*3);
+    }
+
+    .work_page p {
+        padding: 0;
+    }
+
+    .work_page img, .work_page video {
+        max-width: 100%;
     }
 }
 

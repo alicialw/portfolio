@@ -31,7 +31,7 @@ let isFilterApplied = false;
 
 const toggleTheme = document.getElementById('toggleTheme');
 const body = document.querySelector('body');
-const worksFrame = document.querySelector('.works_list');
+const worksFrame = document.querySelector('.unaffected');
 const gradientOverlays = document.querySelectorAll('.gradient_overlay');
 const lightMode = document.getElementById('light_mode');
 const rainbowMode = document.getElementById('rainbow_mode');
@@ -41,6 +41,7 @@ toggleTheme.addEventListener('click', function() {
         if (!isFilterApplied) {
             body.style.filter = 'invert(0.84)';
             worksFrame.style.filter = 'invert(1) contrast(1.5)';
+            worksFrame.style.color = 'black';
             lightMode.style.opacity = '1';
             rainbowMode.style.opacity = '0';
             gradientOverlays.forEach(overlay => {
@@ -51,6 +52,7 @@ toggleTheme.addEventListener('click', function() {
             if (lightMode.style.opacity === '1') {
                 body.style.filter = 'invert(0)';
                 worksFrame.style.filter = 'invert(0) contrast(1)';
+                worksFrame.style.color = 'white';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '1';
                 gradientOverlays.forEach(overlay => {
@@ -58,6 +60,7 @@ toggleTheme.addEventListener('click', function() {
                 });
             } else {
                 body.style.filter = 'invert(0)';
+                worksFrame.style.color = 'white';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
                 gradientOverlays.forEach(overlay => {

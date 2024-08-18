@@ -28,3 +28,13 @@ side.addEventListener('mouseleave', () => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(hideDetails, 5000);
 });
+
+details.addEventListener('click', () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(hideDetails, 5000);
+});
+
+side.addEventListener('click', () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(hideDetails, 5000);
+});
