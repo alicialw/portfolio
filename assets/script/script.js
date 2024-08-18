@@ -32,9 +32,9 @@ let isFilterApplied = false;
 const toggleTheme = document.getElementById('toggleTheme');
 const body = document.querySelector('body');
 const worksFrame = document.querySelector('.unaffected');
-const gradientOverlays = document.querySelectorAll('.gradient_overlay');
 const lightMode = document.getElementById('light_mode');
 const rainbowMode = document.getElementById('rainbow_mode');
+const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
 toggleTheme.addEventListener('click', function() {
     if (worksFrame) {
@@ -44,10 +44,8 @@ toggleTheme.addEventListener('click', function() {
             worksFrame.style.color = 'black';
             lightMode.style.opacity = '1';
             rainbowMode.style.opacity = '0';
-            gradientOverlays.forEach(overlay => {
-                overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
-            });
             isFilterApplied = true;
+            metaThemeColor.setAttribute('content', '#e0e0e0');
         } else {
             if (lightMode.style.opacity === '1') {
                 body.style.filter = 'invert(0)';
@@ -55,18 +53,14 @@ toggleTheme.addEventListener('click', function() {
                 worksFrame.style.color = 'white';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '1';
-                gradientOverlays.forEach(overlay => {
-                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #3B08A3 100%)';
-                });
+                metaThemeColor.setAttribute('content', '#3B08A3');
             } else {
                 body.style.filter = 'invert(0)';
                 worksFrame.style.color = 'white';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
-                gradientOverlays.forEach(overlay => {
-                    overlay.style.background = 'linear-gradient(0deg, rgba(59, 8, 163, 0) 0%, #000000 100%)';
-                });
                 isFilterApplied = false;
+                metaThemeColor.setAttribute('content', 'black');
             }
         }
     } else {
@@ -74,26 +68,20 @@ toggleTheme.addEventListener('click', function() {
             body.style.filter = 'invert(0.84)';
             lightMode.style.opacity = '1';
             rainbowMode.style.opacity = '0';
-            gradientOverlays.forEach(overlay => {
-                overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
-            });
             isFilterApplied = true;
+            metaThemeColor.setAttribute('content', '#e0e0e0');
         } else {
             if (lightMode.style.opacity === '1') {
                 body.style.filter = 'invert(0)';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '1';
-                gradientOverlays.forEach(overlay => {
-                    overlay.style.background = 'linear-gradient(0deg, rgba(59, 8, 163, 0) 0%, #3B08A3 100%)';
-                });
+                metaThemeColor.setAttribute('content', '#3B08A3');
             } else {
                 body.style.filter = 'invert(0)';
                 lightMode.style.opacity = '0';
                 rainbowMode.style.opacity = '0';
-                gradientOverlays.forEach(overlay => {
-                    overlay.style.background = 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%)';
-                });
                 isFilterApplied = false;
+                metaThemeColor.setAttribute('content', 'black');
             }
         }
     }
