@@ -23,6 +23,11 @@ function showPage() {
     }, 500);
 }
 
+window.onload = function() {
+    clearTimeout(loaderVar);
+    showPage();
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     loaderFunction();
 });

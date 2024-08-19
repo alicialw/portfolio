@@ -26,7 +26,23 @@ backToTop.addEventListener('click', () => {
     scrollToTop();
 });
 
-workPage.addEventListener('scroll', () => {
+
+let scrollPos = 0;
+
+workPage.addEventListener('scroll', function() {
+    if (workPage.scrollTop > scrollPos) {
+        console.log('Scroll direction: DOWN');
+        hideDetails();
+    } else {
+        console.log('Scroll direction: UP');
+        showDetails();
+    }
+    scrollPos = workPage.scrollTop;
+});
+
+
+
+/*workPage.addEventListener('scroll', () => {
     const scrollPosition = workPage.scrollTop;
     const windowHeight = workPage.clientHeight;
     
@@ -48,4 +64,4 @@ workPage.addEventListener('scroll', () => {
         }
     } else {
     }
-});
+});*/

@@ -1587,13 +1587,13 @@ button:has(#theme_palette):active #theme_palette {
     .details {
         opacity: 0;
         /*transform: translateX(-50%);*/
-        transition: 1s;
+        transition: 0.5s;
     }
 
     .works_list.side {
         width: 0;
         padding-right: calc(var(--rmg)*0.5);
-        transition: 1s;
+        transition: 0.5s;
     }
 
     .works_list {
