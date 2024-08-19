@@ -85,7 +85,7 @@ body {
     transition: opacity 1s;
 }
 
-/*#loader_circles {
+#loader_circles {
     position: relative;
     top: 50%;
     margin: 0 auto;
@@ -97,30 +97,29 @@ body {
     -webkit-animation: load 1.5s infinite;
     opacity: 1;
     scale: 3;
-    rotate: -90deg;
-    transform-origin: center;
+    /*transform-origin: center;
     transform-style: preserve-3d;
-    transform: rotateY(-45deg);
+    transform: rotateY(-45deg);*/
   }
   
   @keyframes load {
     0%,
-    100%{transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
-    40% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(-15px 0px 0px grey) drop-shadow(-15px 0px 0px dimgrey)}
-    50% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
-    90% {transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
+    100%{transform: translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    40% {transform: translate( 35px);filter: drop-shadow(-15px 0px 0px grey) drop-shadow(-15px 0px 0px dimgrey)}
+    50% {transform: translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    90% {transform: translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
   }
 
   @-webkit-keyframes load {
     0%,
-    100%{transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
-    40% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(-15px 0px 0px grey) drop-shadow(-15px 0px 0px dimgrey)}
-    50% {transform:rotateY(-45deg) translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
-    90% {transform:rotateY(-45deg) translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
+    100%{transform: translate(-35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    40% {transform: translate( 35px);filter: drop-shadow(-15px 0px 0px grey) drop-shadow(-15px 0px 0px dimgrey)}
+    50% {transform: translate( 35px);filter: drop-shadow(0px 0px 0px grey) drop-shadow(0px 0px 0px dimgrey)}
+    90% {transform:  translate(-35px);filter: drop-shadow(15px 0px 0px grey) drop-shadow(15px 0px 0px dimgrey)}
   }
-*/
 
-#loader_circles {
+
+/*#loader_circles {
     position: relative;
     top: 50%;
     margin: 0 auto;
@@ -148,7 +147,7 @@ body {
   
   @keyframes load {to{transform: rotateX(-45deg) rotateZ(1turn)}}
 
-  @-webkit-keyframes load {to{transform: rotateX(-45deg) rotateZ(1turn)}}
+  @-webkit-keyframes load {to{transform: rotateX(-45deg) rotateZ(1turn)}}*/
 
 span.line {
     display: inline-block;
