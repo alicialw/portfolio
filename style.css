@@ -1748,6 +1748,7 @@ button:has(#theme_palette):active #theme_palette {
         flex: 1;
         width: calc(100vw - var(--rmg)*2);
         height: auto;
+        transform: translate3d(0,0,0);
     }
 
 
