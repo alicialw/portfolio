@@ -257,7 +257,7 @@ nav ul {
 nav li {
     float: left;
     flex: 0;
-    filter:brightness(0.25);
+    filter:brightness(0.3);
     z-index: 100;
 }
 
@@ -1680,6 +1680,10 @@ button:has(#theme_palette):active #theme_palette {
         flex-direction: row;
     }
 
+    nav li {
+        filter: brightness(0.5);
+    }
+
     .load1 {
         opacity: 0;
         animation: fadeInDown 1s forwards;
@@ -1700,7 +1704,7 @@ button:has(#theme_palette):active #theme_palette {
         top: 0;
         right: 0;
         transform-origin: top left;
-        transform: translateX(100%) rotate(90deg);
+        transform: translateX(0) rotate(0deg);
         text-align: left;
     }
 
@@ -1719,6 +1723,7 @@ button:has(#theme_palette):active #theme_palette {
 
     .works {
         position: fixed;
+        transform: translateX(0) rotate(0deg);
         left: 0;
     }
 
