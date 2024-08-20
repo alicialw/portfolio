@@ -66,7 +66,7 @@ body {
     left:0;
     opacity: 0;
     background: #5200B9;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
     z-index: 101;
     overflow: hidden;
     pointer-events: none;
@@ -1128,9 +1128,13 @@ button:has(#theme_palette):active #theme_palette {
     font-size: 1rem;
     line-height: normal;
     text-align: left;
+    hyphens: auto;
     text-wrap: pretty;
 }
 
+b {
+    font-weight: 700;
+}
 
 .work_page p + img,
 .work_page p + video,
