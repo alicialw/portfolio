@@ -66,7 +66,7 @@ body {
     left:0;
     opacity: 0;
     background: #5200B9;
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
     z-index: 101;
     overflow: hidden;
     pointer-events: none;
@@ -1132,8 +1132,10 @@ button:has(#theme_palette):active #theme_palette {
 }
 
 
-.work_page > img:first-of-type{
-    padding-top: var(--rmg);
+.work_page p + img,
+.work_page p + video,
+.work_page p + div {
+    margin-top: var(--rmg);
 }
 
 .work_description > img {
@@ -1214,7 +1216,7 @@ button:has(#theme_palette):active #theme_palette {
 .entry {
     opacity: 0;
     transition: 0.5s;
-    transform: translateY(calc(var(--rmg)*2));
+    transform: translateY(10%);
 }
 
 .entry.visible {
