@@ -19,7 +19,7 @@ const getItemHeight = (item) => {
 
 
 
-worksList.addEventListener('scroll', function() {
+worksList.addEventListener('scroll', function () {
 
     worksListItems.forEach((item, index) => {
         const itemTop = getItemTop(item);
@@ -49,14 +49,14 @@ worksList.addEventListener('scroll', function() {
                             link.style.opacity = 0;
                         }
                     });
-                    
+
                 }
             }
         } else if (window.matchMedia('(max-aspect-ratio: 4/5)').matches) {
             if (itemTop < worksListUpper && itemTop + itemHeight > worksListUpper) {
                 if (index !== topItemIndex) {
                     worksListItems[topItemIndex].style.transform = 'rotateX(-60deg) rotateY(0deg) rotateZ(45deg)';
-                    worksListItems[topItemIndex].style.margin= 'calc(var(--rmg)*-4) 0';
+                    worksListItems[topItemIndex].style.margin = 'calc(var(--rmg)*-4) 0';
                     topItemIndex = index;
                     item.style.transform = 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
                     item.style.margin = '0';

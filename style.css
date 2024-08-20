@@ -691,10 +691,6 @@ button:has(#theme_palette):active #theme_palette {
     margin-bottom: 0.5rem;
 }
 
-
-
-
-
 #profile {
     display: flex;
     align-items: center;
@@ -814,11 +810,7 @@ button:has(#theme_palette):active #theme_palette {
     /*scroll-snap-align: center;*/
     /*scroll-snap-stop: always;*/
     transition: 0.5s;
-
-    
 }
-
-
 
 .works_list a {
     position: relative;
@@ -1034,7 +1026,7 @@ button:has(#theme_palette):active #theme_palette {
     color:white;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-bottom: calc(var(--rmg)*2);
+    padding-bottom: calc(var(--rmg)*6);
 }
 
 .thumbnail {
@@ -1067,6 +1059,12 @@ button:has(#theme_palette):active #theme_palette {
     background-attachment: fixed;
 }
 
+#hanoi_thumbnail {
+    background: url(assets/media/works/Hanoi/hanoipho.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .work_description {
     display: flex;
     width: 100%;
@@ -1077,11 +1075,6 @@ button:has(#theme_palette):active #theme_palette {
     align-content: center;
     z-index: 1;
     pointer-events: none;
-}
-
-.work_description::after{
-    border-top: solid 2px grey;
-    padding-bottom: 25vh;
 }
 
 .work_page h1 {
@@ -1105,6 +1098,17 @@ button:has(#theme_palette):active #theme_palette {
     opacity: 0.5;
 }
 
+.work_page h4 {
+    position: relative;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: calc(var(--rmg)*2);
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.5;
+}
+
 .work_page p {
     padding: 0 var(--rmg);
     max-width: 75vh;
@@ -1115,6 +1119,18 @@ button:has(#theme_palette):active #theme_palette {
     text-align: center;
     text-wrap: pretty;
 }
+
+.long p {
+    padding: 0;
+    max-width: 75vh;
+    min-width: calc(var(--rmg)*6);
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-size: 1rem;
+    line-height: normal;
+    text-align: left;
+    text-wrap: pretty;
+}
+
 
 .work_page > img:first-of-type{
     padding-top: var(--rmg);
@@ -1326,6 +1342,9 @@ button:has(#theme_palette):active #theme_palette {
         display: none;
     }
 
+    .cta {
+    font-size: 1rem;
+    }
 }
 
 @media only screen and (min-width: 480px) and (min-height: 540px) {
@@ -1397,6 +1416,10 @@ button:has(#theme_palette):active #theme_palette {
 
     #skl {
         grid-area: 5 / 2 / 5 / 2;
+    }
+
+    .cta {
+        font-size: 2rem;
     }
 }
 
@@ -1852,7 +1875,6 @@ button:has(#theme_palette):active #theme_palette {
         top: 20%;
         text-wrap: nowrap;
         opacity: 1;
-        font-size: 1rem;
     }
 
     .works_list {

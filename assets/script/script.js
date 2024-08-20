@@ -23,12 +23,12 @@ function showPage() {
     }, 500);
 }
 
-window.onload = function() {
+window.onload = function () {
     clearTimeout(loaderVar);
     showPage();
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     loaderFunction();
 });
 
@@ -41,7 +41,7 @@ const lightMode = document.getElementById('light_mode');
 const rainbowMode = document.getElementById('rainbow_mode');
 const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
-toggleTheme.addEventListener('click', function() {
+toggleTheme.addEventListener('click', function () {
     if (worksFrame) {
         if (!isFilterApplied) {
             body.style.filter = 'invert(0.84)';
@@ -91,6 +91,8 @@ toggleTheme.addEventListener('click', function() {
         }
     }
 });
+
+window.onresize = function(){ location.reload(); }
 
 
 

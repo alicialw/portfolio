@@ -11,16 +11,16 @@ toggleAbout.addEventListener('click', () => {
         aboutLyrics.style.opacity = 1;
         aboutLyrics.style.zIndex = 5;
         aboutContainer.style.display = 'none';
-        toggleAbout.textContent = 'A'; 
+        toggleAbout.textContent = 'A';
     } else {
         aboutLyrics.style.opacity = 0;
         aboutLyrics.style.zIndex = -1;
         aboutContainer.style.display = 'flex';
-        toggleAbout.textContent = '⏵'; 
+        toggleAbout.textContent = '⏵';
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const lyricsElements = aboutLyrics.querySelectorAll('p, li, a');
 
     function applyEffect() {

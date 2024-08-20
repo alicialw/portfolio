@@ -32,7 +32,7 @@ backToTop.addEventListener('click', () => {
 
 let scrollPos = 0;
 
-workPage.addEventListener('scroll', function() {
+workPage.addEventListener('scroll', function () {
     if (workPage.scrollTop > scrollPos) {
         // console.log('Scroll direction: DOWN');
         hideDetails();
@@ -59,34 +59,31 @@ window.addEventListener('resize', setGradientTopDisplay);
 function entersWorkPageBy25Percent(element) {
     const elementRect = element.getBoundingClientRect();
     const workPageRect = workPage.getBoundingClientRect();
-    
+
     const entersWorkPage = elementRect.top <= workPageRect.bottom - (workPageRect.height * 0.25) &&
-                           elementRect.bottom >= workPageRect.top + (workPageRect.height * 0.25);
-  
+        elementRect.bottom >= workPageRect.top + (workPageRect.height * 0.25);
+
     console.log(`Element top: ${elementRect.top}, Element bottom: ${elementRect.bottom}`);
     console.log(`WorkPage top: ${workPageRect.top}, WorkPage bottom: ${workPageRect.bottom}`);
     console.log(`WorkPage height: ${workPageRect.height}, Element height: ${elementRect.height}`);
     console.log(`Enters WorkPage by 25%: ${entersWorkPage}`);
-  
+
     return entersWorkPage;
-  }
-  
-  // Function to handle the scroll event within workPage
-  function handleScroll() {
+}
+
+function handleScroll() {
     const entries = document.querySelectorAll('.entry');
-    
+
     entries.forEach(entry => {
-      if (entersWorkPageBy25Percent(entry)) {
-        entry.classList.add('visible');
-      }
+        if (entersWorkPageBy25Percent(entry)) {
+            entry.classList.add('visible');
+        }
     });
-  }
-  
-  // Event listener for scroll event within workPage
-  workPage.addEventListener('scroll', handleScroll);
-  
-  // Initial check on page load
-  window.addEventListener('load', handleScroll);
+}
+
+workPage.addEventListener('scroll', handleScroll);
+
+window.addEventListener('load', handleScroll);
 
 /*workPage.addEventListener('scroll', () => {
     const scrollPosition = workPage.scrollTop;
