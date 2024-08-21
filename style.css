@@ -1065,6 +1065,12 @@ button:has(#theme_palette):active #theme_palette {
     background-attachment: fixed;
 }
 
+#endpoem_thumbnail {
+    background: url('assets/media/works/End Poem/1.png') top left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .work_description {
     display: flex;
     width: 100%;
@@ -1084,6 +1090,7 @@ button:has(#theme_palette):active #theme_palette {
     line-height: 1;
     margin: calc(var(--rmg)*1.5) 0 0;
     text-align: center;
+    pointer-events: auto;
 }
 
 .work_page h3 {
@@ -1096,6 +1103,7 @@ button:has(#theme_palette):active #theme_palette {
     text-align: center;
     margin-bottom: calc(var(--rmg)*1.5);
     opacity: 0.5;
+    pointer-events: auto;
 }
 
 .work_page h4 {
@@ -1118,18 +1126,31 @@ button:has(#theme_palette):active #theme_palette {
     line-height: normal;
     text-align: center;
     text-wrap: pretty;
+    
+}
+
+.work_page a {
+    color:white;
+    pointer-events: auto;
+}
+
+.work_page a:hover {
+    filter: blur(4px);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .long p {
     padding: 0;
     max-width: 75vh;
-    min-width: calc(var(--rmg)*6);
+    min-width: 0;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-size: 1rem;
     line-height: normal;
     text-align: left;
     hyphens: auto;
     text-wrap: pretty;
+    pointer-events: auto;
 }
 
 b {
@@ -1142,9 +1163,15 @@ b {
     margin-top: var(--rmg);
 }
 
+.work_page img,
+.work_page video,
+.work_page iv {
+    margin-bottom: var(--rmg);
+}
+
 .work_description > img {
     object-fit: contain;
-    max-height: 100vh;
+    max-width: 100%;
 }
 
 .work_page video {
@@ -1153,11 +1180,10 @@ b {
     margin: var(--rmg) 0;
 }
 
-.work_page iframe {
-    max-width: 100%;
-    height: 100%;
-    border: none;
-    overflow: hidden;
+
+
+.playable {
+    pointer-events: auto !important;
 }
 
 .ava_cover {
@@ -1233,6 +1259,13 @@ b {
     /*transform: translateX(-50%);*/
     transition: 0.5s;
 }
+
+.work_description .credit {
+    opacity: 0.5;
+    text-align: center;
+}
+
+
 
 @media (hover: none) and (pointer: none) {
 
@@ -1515,6 +1548,7 @@ b {
         text-decoration: none;
         height: min-content;
         hyphens: auto;
+        pointer-events: auto;
     }
     
     .about_item ul {

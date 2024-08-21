@@ -17,7 +17,32 @@ const getItemHeight = (item) => {
     return item.offsetHeight + marginTop + marginBottom;
 };
 
-
+worksListItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+        if (index !== topItemIndex) {
+            worksListItems[topItemIndex].classList.remove('focus');
+            worksListItems[topItemIndex].style.transform = 'rotateX(-60deg) rotateY(0deg) rotateZ(45deg)';
+            topItemIndex = index;
+            item.style.transform = 'translateX(-50%) translateY(0) rotateX(-60deg) rotateY(0deg) rotateZ(0deg)';
+            item.classList.add('focus');
+            scrollSignifier.style.opacity = '0';
+            wvideos.forEach((video, i) => {
+                if (i !== index) {
+                    video.style.filter = defaultFilters[i];
+                } else {
+                    video.style.filter = 'none';
+                }
+            });
+            wlinks.forEach((link, i) => {
+                if (i === index) {
+                    link.style.opacity = 1;
+                } else {
+                    link.style.opacity = 0;
+                }
+            });
+        }
+    });
+});
 
 worksList.addEventListener('scroll', function () {
 
