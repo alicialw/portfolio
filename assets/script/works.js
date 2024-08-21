@@ -3,7 +3,7 @@ const worksList = document.querySelector('.works_list');
 const worksListItems = document.querySelectorAll('.works_list li');
 
 const worksListMiddle = worksList.offsetTop + (worksList.offsetHeight / 2);
-const worksListUpper = worksList.offsetTop + (worksList.offsetHeight / 3);
+const worksListUpper = worksList.offsetTop + (worksList.offsetHeight / 2);
 let topItemIndex = 0;
 
 const getItemTop = (item) => {
