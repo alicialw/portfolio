@@ -964,6 +964,21 @@ button:has(#theme_palette):active #theme_palette {
     pointer-events: none;
 }
 
+.update {
+    position: relative;
+    margin-top: calc(var(--rmg)*3);
+    margin-left: auto;
+    width: calc(var(--rmg)* 12);
+    position: relative;
+    font-family: "Space Grotesk", monospace, sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.5;
+    color: white;
+}
+
 .side li {
     height: auto;
     margin-bottom: calc(var(--rmg)*-7);
@@ -1982,6 +1997,10 @@ b {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         transition: 0.5s;
         z-index: 100;
+    }
+
+    .update {
+        margin: calc(var(--rmg)*3) auto 0;
     }
 
     .thumbnail {
