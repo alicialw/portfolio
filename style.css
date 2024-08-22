@@ -888,31 +888,31 @@ button:has(#theme_palette):active #theme_palette {
     text-transform: uppercase;
 }
 
-.works_list ul:nth-child(1) {
+.works_list ul li:nth-last-child(1) {
     z-index: 1;
 }
 
-.works_list ul:nth-child(2) {
+.works_list ul li:nth-last-child(2) {
     z-index: 2;
 }
 
-.works_list ul:nth-child(3) {
+.works_list ul li:nth-last-child(3) {
     z-index: 3;
 }
 
-.works_list ul:nth-child(4) {
+.works_list ul li:nth-last-child(4) {
     z-index: 4;
 }
 
-.works_list ul:nth-child(5) {
+.works_list ul li:nth-last-child(5) {
     z-index: 5;
 }
 
-.works_list ul:nth-child(6) {
+.works_list ul li:nth-last-child(6) {
     z-index: 6;
 }
 
-.works_list ul:nth-child(7) {
+.works_list ul li:nth-last-child(7) {
     z-index: 7;
 }
 
