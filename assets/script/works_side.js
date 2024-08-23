@@ -84,27 +84,3 @@ function handleScroll() {
 workPage.addEventListener('scroll', handleScroll);
 
 window.addEventListener('load', handleScroll);
-
-/*workPage.addEventListener('scroll', () => {
-    const scrollPosition = workPage.scrollTop;
-    const windowHeight = workPage.clientHeight;
-    
-    if (window.matchMedia('(min-aspect-ratio: 4/5)').matches) {
-        if (scrollPosition === 0) {
-            showDetails();
-        } else if (scrollPosition >= windowHeight / 2) {
-            hideDetails();
-        }
-    } else if (window.matchMedia('(max-aspect-ratio: 4/5)').matches) {
-        backToTop.style.display = 'none';
-        if (scrollPosition === 0) {
-            showDetails();
-            backToTop.style.display = 'none';
-
-        } else if (scrollPosition >= windowHeight / 3) {
-            hideDetails();
-            backToTop.style.display = 'block';
-        }
-    } else {
-    }
-});*/
