@@ -221,7 +221,7 @@ span.line {
     margin: calc(var(--rmg) * -1);
 }
 
-.background_ video video {
+.background_video video {
     object-fit: cover;
     object-position: center;
     overflow: clip;
@@ -1183,13 +1183,14 @@ b {
 
 .work_page p + img,
 .work_page p + video,
-.work_page p + div {
+.work_page p + div,
+.work_page p + iframe {
     margin-top: var(--rmg);
 }
 
 .work_page img,
 .work_page video,
-.work_page iv {
+.work_page div {
     margin-bottom: var(--rmg);
 }
 
@@ -1204,6 +1205,14 @@ b {
     margin: var(--rmg) 0;
 }
 
+.work_page iframe {
+    object-fit: contain;
+    aspect-ratio: 8 / 5;
+    width: 100%;
+    height: 100%;
+    margin: var(--rmg) 0;
+    pointer-events: auto;
+}
 
 
 .playable {
