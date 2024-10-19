@@ -914,6 +914,10 @@ button:has(#theme_palette):active #theme_palette {
     z-index: 7;
 }
 
+.works_list ul li:nth-last-child(8) {
+    z-index: 8;
+}
+
 #work_empty {
     opacity: 0;
     pointer-events: none;
@@ -1095,6 +1099,12 @@ button:has(#theme_palette):active #theme_palette {
     background-attachment: fixed;
 }
 
+#bnc_thumbnail {
+    background: url('assets/media/works/bonecong/BNC_Graphic.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .work_description {
     display: flex;
     width: 100%;
@@ -1232,7 +1242,7 @@ b {
     position: absolute;
     margin: 0;
     left: 12.5%;
-    top: calc(var(--rmg)*4);
+    top: calc(var(--rmg)*1);
     aspect-ratio: 1 /1;
     height: calc(var(--rmg)*4);
     object-fit: contain;
