@@ -1076,13 +1076,13 @@ button:has(#theme_palette):active #theme_palette {
 }
 
 #g24_thumbnail {
-    background: url(assets/media/works/G24/poster.png) no-repeat center;
+    background: url(assets/media/works/G24/poster.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
 
 #g23_thumbnail {
-    background: url(assets/media/works/G23/tranhtapthetext.png) no-repeat center;
+    background: url(assets/media/works/G23/tranhtapthetext.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -1100,7 +1100,7 @@ button:has(#theme_palette):active #theme_palette {
 }
 
 #bnc_thumbnail {
-    background: url('assets/media/works/bonecong/BNC_Graphic.png') no-repeat center;
+    background: url('assets/media/works/bonecong/BNC_Graphic.jpg') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -1249,12 +1249,12 @@ b {
 }
 
 #glams_ac {
-    background: url('assets/media/works/G23/glams23 cover.png') no-repeat top;
+    background: url('assets/media/works/G23/glams23 cover.jpg') no-repeat top;
     background-size: cover;
 }
 
 #mbnk_ac {
-    background: url('assets/media/works/G23/mbnk cover to.png') no-repeat top;
+    background: url('assets/media/works/G23/mbnk cover to.jpg') no-repeat top;
     background-size: cover;
 }
 
