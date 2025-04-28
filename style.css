@@ -759,6 +759,7 @@ button:has(#theme_palette):active #theme_palette {
     transform-origin: center;
     overflow-x: visible;
     overflow-y: auto;
+    color: white;
     z-index: 98;
     /*transform-origin: center;
     transform: translateY(-50%) rotate(-90deg);*/
