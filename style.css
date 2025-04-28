@@ -730,7 +730,6 @@ button:has(#theme_palette):active #theme_palette {
 #work_intro {
     display: block;
     position: relative;
-    color: lightgrey;
     font-family: "Space Grotesk", monospace, sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -952,9 +951,9 @@ button:has(#theme_palette):active #theme_palette {
     line-height: normal;
     text-align: center;
     text-wrap: balance;
-    opacity: 0.5;
-    color: white;
+    mix-blend-mode: difference;
     padding-bottom: calc(var(--rmg));
+    transition: color 0s !important;
 }
 
 .side li {
