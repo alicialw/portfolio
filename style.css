@@ -889,37 +889,7 @@ button:has(#theme_palette):active #theme_palette {
     text-transform: uppercase;
 }
 
-.works_list ul li:nth-last-child(1) {
-    z-index: 1;
-}
 
-.works_list ul li:nth-last-child(2) {
-    z-index: 2;
-}
-
-.works_list ul li:nth-last-child(3) {
-    z-index: 3;
-}
-
-.works_list ul li:nth-last-child(4) {
-    z-index: 4;
-}
-
-.works_list ul li:nth-last-child(5) {
-    z-index: 5;
-}
-
-.works_list ul li:nth-last-child(6) {
-    z-index: 6;
-}
-
-.works_list ul li:nth-last-child(7) {
-    z-index: 7;
-}
-
-.works_list ul li:nth-last-child(8) {
-    z-index: 8;
-}
 
 #work_empty {
     opacity: 0;

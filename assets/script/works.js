@@ -110,3 +110,10 @@ const defaultFilters = [];
 wvideos.forEach(wvideo => {
     defaultFilters.push(wvideo.style.filter);
 });
+
+document.querySelectorAll('.works_list ul').forEach(ul => {
+    const items = ul.querySelectorAll('li');
+    items.forEach((item, i) => {
+      item.style.setProperty('z-index', items.length - i);
+    });
+  });
