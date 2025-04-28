@@ -60,10 +60,10 @@ function entersWorkPageBy25Percent(element) {
     const entersWorkPage = elementRect.top <= workPageRect.bottom - (workPageRect.height * 0.25) &&
         elementRect.bottom >= workPageRect.top + (workPageRect.height * 0.25);
 
-    console.log(`Element top: ${elementRect.top}, Element bottom: ${elementRect.bottom}`);
-    console.log(`WorkPage top: ${workPageRect.top}, WorkPage bottom: ${workPageRect.bottom}`);
-    console.log(`WorkPage height: ${workPageRect.height}, Element height: ${elementRect.height}`);
-    console.log(`Enters WorkPage by 25%: ${entersWorkPage}`);
+    //console.log(`Element top: ${elementRect.top}, Element bottom: ${elementRect.bottom}`);
+    //console.log(`WorkPage top: ${workPageRect.top}, WorkPage bottom: ${workPageRect.bottom}`);
+    //console.log(`WorkPage height: ${workPageRect.height}, Element height: ${elementRect.height}`);
+    //console.log(`Enters WorkPage by 25%: ${entersWorkPage}`);
 
     return entersWorkPage;
 }
