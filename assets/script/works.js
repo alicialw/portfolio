@@ -1,4 +1,3 @@
-const scrollSignifier = document.querySelector('.cta');
 const worksList = document.querySelector('.works_list');
 const worksListItems = document.querySelectorAll('.works_list li');
 
@@ -25,7 +24,6 @@ worksListItems.forEach((item, index) => {
             topItemIndex = index;
             item.style.transform = 'translateX(-50%) translateY(0) rotateX(-60deg) rotateY(0deg) rotateZ(0deg)';
             item.classList.add('focus');
-            scrollSignifier.style.opacity = '0';
             wvideos.forEach((video, i) => {
                 if (i !== index) {
                     video.style.filter = defaultFilters[i];
@@ -59,7 +57,6 @@ worksList.addEventListener('scroll', function () {
                     topItemIndex = index;
                     item.style.transform = 'translateX(-50%) translateY(0) rotateX(-60deg) rotateY(0deg) rotateZ(0deg)';
                     item.classList.add('focus');
-                    scrollSignifier.style.opacity = '0';
                     wvideos.forEach((video, i) => {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];
@@ -85,7 +82,6 @@ worksList.addEventListener('scroll', function () {
                     topItemIndex = index;
                     item.style.transform = 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
                     item.style.margin = '0';
-                    scrollSignifier.style.opacity = '0';
                     wvideos.forEach((video, i) => {
                         if (i !== index) {
                             video.style.filter = defaultFilters[i];

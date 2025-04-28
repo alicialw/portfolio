@@ -1,4 +1,3 @@
-const side = document.querySelector('.side');
 const details = document.querySelector('.details');
 const workPage = document.querySelector('.work_page');
 const gradientTop = document.getElementById('gradient_top');
@@ -6,14 +5,12 @@ const backToTop = document.getElementById('backToTop');
 let timeoutId;
 
 const showDetails = () => {
-    side.style.opacity = '1';
     details.style.opacity = '1';
     backToTop.style.opacity = '0';
     gradientTop.style.opacity = '1';
 };
 
 const hideDetails = () => {
-    side.style.opacity = '0';
     details.style.opacity = '0';
     backToTop.style.opacity = '1';
     gradientTop.style.opacity = '0';

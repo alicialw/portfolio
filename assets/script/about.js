@@ -4,7 +4,6 @@ const aboutContainer = document.querySelector('.about_container');
 
 aboutLyrics.style.opacity = 1;
 aboutContainer.style.display = 'none';
-toggleAbout.textContent = 'A';
 
 toggleAbout.addEventListener('click', () => {
     if (aboutLyrics.style.opacity == 0) {
@@ -40,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    aboutLyrics.addEventListener('scroll', applyEffect);
+    aboutLyrics.addEventListener('scroll', applyEffect) ;
+    
 
     applyEffect();
 });
