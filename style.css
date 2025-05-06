@@ -1076,6 +1076,18 @@ button:has(#theme_palette):active #theme_palette {
     background-attachment: fixed;
 }
 
+#susu_thumbnail {
+    background: url('assets/media/works/Sustainable YOU/NOPA poster.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#odz_thumbnail {
+    background: url('assets/media/works/oddeazy_poster.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #hanoi_thumbnail {
     background: url(assets/media/works/Hanoi/hanoipho.png);
     background-size: cover;
@@ -1219,6 +1231,14 @@ b {
     margin: var(--rmg) 0;
 }
 
+.work_page .embed {
+    position: relative;
+    aspect-ratio: 8 / 5;
+    width: 100%;
+    height: 100%;
+    margin: var(--rmg) 0;
+}
+
 .work_page iframe {
     object-fit: contain;
     aspect-ratio: 8 / 5;
@@ -1226,6 +1246,7 @@ b {
     height: 100%;
     margin: var(--rmg) 0;
     pointer-events: auto;
+    font-family: "Space Grotesk", monospace, sans-serif;
 }
 
 
