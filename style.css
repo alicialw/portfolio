@@ -1268,7 +1268,7 @@ b {
 .pic_format{
     width: 100%;
     display: grid;
-    grid-template-columns: calc(30% - var(--rmg)/2) calc(70% - var(--rmg)/2);
+    grid-template-columns: calc(35% - var(--rmg)/2) calc(65% - var(--rmg)/2);
     gap: var(--rmg);
 }
 
